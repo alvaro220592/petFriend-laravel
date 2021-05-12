@@ -1,0 +1,9 @@
+version: '3.5'
+
+services:
+    laravel-app: # pode ser qualquer nome
+        build: . # build pela pasta atual na qual está o Dockerfile
+        ports:
+            - "8080:80" # porta do pc seguida pela porta do container
+        volumes:
+            - ./:/usr/share/nginx # './' é a pasta que eu estou e tudo que for escrito aqui vai pro nginx'
