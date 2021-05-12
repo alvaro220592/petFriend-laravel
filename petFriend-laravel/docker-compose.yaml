@@ -7,3 +7,20 @@ services:
             - "8080:80" # porta do pc seguida pela porta do container
         volumes:
             - ./:/usr/share/nginx # './' é a pasta que eu estou e tudo que for escrito aqui vai pro nginx'
+        networks: 
+            - app-network
+    
+    mysql-app:
+        # não precisa do build
+        image: "mysql:5.7.22"
+        ports:
+            - "3306:3306"
+        environment:
+            MYSQL_DATABASE: petFriend_laravel
+            MYSQL_ROOT_PASSWORD: laravel
+        networks:
+            - app-network
+
+networks:
+    app-network:
+        driver: bridge
