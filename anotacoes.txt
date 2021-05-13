@@ -23,3 +23,29 @@ Passos:
 9 - Agora no navegador dá not found por causa da mudança de configuração das pastas na hora da criação do volume. É necessário criar um link simbólico 'ln -s public html'. Então quando o usuário entrar, o sistema entende que ao invés de procurar a pasta 'html' de antes, vai na 'public' do laravel
 
 ########## Parou no min 40 do tutorial https://www.youtube.com/watch?v=YsA1zmSB-G8
+
+10 - Para usar o MySQL, crie um novo serviço no arquivo .yaml chamado mysql-app (pode ser qualquer nome), cuja imagem (image) é a versão "mysql:5.7.22". Outras especificações foram inseridas no arquivo.
+
+11 - Insira embaixo do 'ports' o 'environment', onde serão criadas variáveis de ambiente que criarão o banco de dados (nome do banco: petFriend_laravel e senha: laravel).
+
+12 - Crie a rede interna (network) tanto no service laravel quanto no mysql para que os containers se comuniquem. A rede no projeto foi chamada de app-network
+
+13 - Declare a rede fora dos services. No projeto, embaixo dela foi declarado 'driver: bridge'. Derrube o container e suba de novo pra testar com a tag --build
+
+14 - Faça o container do laravel se conectar ao docker:
+	. Entre no arquivo .env do laravel e mude o host do mysql para o nome do service mysql do .yaml que é mysql-app.
+	. mude também o database pro nome indicado no service e a senha também. Nesse projeto o usuario ficou root
+
+15 - Teste fazendo o seguinte:
+	. Entre no container do laravel: docker exec -it <nome container laravel> bash
+	. Entre em /usr/share/nginx/
+	. ping mysql-app
+	
+	ou
+
+	. Entre no container do mysql: docker exec -it <nome container mysql> bash
+	. Entre no mysql: 'mysql -u root -p'. A senha é laravel, como definido no .yaml (MYSQL_ROOT_PASSWORD: laravel)
+	. Dê um 'show databases' pra ver se o banco foi criado com a build.
+
+16 - Entre no container laravel em /usr/share/nginx e dê um php artisan migrate pras tabelas serem criadas.
+	Novamente, os dados serão zerados depois da derrubada do container, como acontecia antes da criação do link simbólico.
