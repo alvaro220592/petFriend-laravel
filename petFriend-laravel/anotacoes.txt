@@ -1,0 +1,25 @@
+Projeto de agendamento de pet shop/clínica veterinária com Docker e Laravel
+
+Passos:
+
+1 - Criar o projeto laravel:
+	composer create-project --prefer-dist laravel/laravel petFriend-laravel
+
+2 - Criar o Dockerfile na pasta raiz
+
+3 - Inserir no Dockerfile: FROM wyveo/nginx-php-fpm:latest
+	Neste comando o nginx manterá o document root na pasta /usr/share/nginx/html
+
+4 - Criar o docker-compose.yaml
+
+5 - Dar o comando 'docker-compose up -d' na raíz do projeto
+
+6 - Testar o container do nginx no navegador com 'localhost:8080' conforme especificado no .yaml
+
+7 - Se quiser entrar no container: docker exec -it <nome-container> bash
+
+8 - Pra manter as alterações depois de derrubar o container é preciso configurar o volume entre a máquina e o container. Pra isso foi criado o item 'volumes' no .yaml
+
+9 - Agora no navegador dá not found por causa da mudança de configuração das pastas na hora da criação do volume. É necessário criar um link simbólico 'ln -s public html'. Então quando o usuário entrar, o sistema entende que ao invés de procurar a pasta 'html' de antes, vai na 'public' do laravel
+
+########## Parou no min 40 do tutorial https://www.youtube.com/watch?v=YsA1zmSB-G8
