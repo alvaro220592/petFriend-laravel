@@ -1,3 +1,33 @@
 * {
-    background-color: tomato;
+    font-family: 'Amatic SC', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#logo-img {
+    width: 100px;
+    height: 130px;
+}
+
+
+#title-subtitle-container {
+    text-align: center;
+    margin: 0 auto;
+}
+
+#logo-title {
+    font-size: 100px;
+    font-weight: bold;
+}
+
+#logo-subtitle {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+
+.logo-container {
+    display: flex;
+    justify-content: space-between;
 }
