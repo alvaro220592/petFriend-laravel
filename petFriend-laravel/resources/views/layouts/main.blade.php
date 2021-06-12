@@ -29,11 +29,12 @@
                 <div class="collapse navbar-collapse" id="navbar">
                     <a href="/" class="navbar-brand">
                         <div class="logo-container">
-                            <img src="/img/dog-track.png" alt="" id="logo-img" class="mx-3 mt-3">
                             <div id="title-subtitle-container">
                                 <h1 id="logo-title">PetFriend</h1>
                                 <span id="logo-subtitle">Para o seu melhor amigo</span>
                             </div>
+                            {{--<img src="/img/dog-track.png" alt="" id="logo-img" class="mx-3 mt-3">--}}
+                            
                         </div>
                     </a>
                     <ul class="navbar-nav">

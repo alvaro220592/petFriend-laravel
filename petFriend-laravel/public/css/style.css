@@ -13,11 +13,12 @@
 
 #title-subtitle-container {
     text-align: center;
+    padding: 0 20px;
     margin: 0 auto;
 }
 
 #logo-title {
-    font-size: 100px;
+    font-size: 70px;
     font-weight: bold;
 }
 
