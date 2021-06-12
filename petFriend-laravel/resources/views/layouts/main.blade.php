@@ -32,6 +32,7 @@
                             <div id="title-subtitle-container">
                                 <h1 id="logo-title">PetFriend</h1>
                                 <span id="logo-subtitle">Para o seu melhor amigo</span>
+                                <img src="/img/dog-track2.svg" alt="" id="logo-img" class="mb-2 mx-1">
                             </div>
                             {{--<img src="/img/dog-track.png" alt="" id="logo-img" class="mx-3 mt-3">--}}
                             
