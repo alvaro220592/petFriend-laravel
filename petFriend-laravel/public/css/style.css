@@ -9,7 +9,6 @@
     width: 30px;
 }
 
-
 #title-subtitle-container {
     text-align: center;
     padding: 0 20px;
@@ -30,4 +29,13 @@
 .logo-container {
     display: flex;
     justify-content: space-between;
+}
+
+.agendamentos {
+    overflow-y: scroll;
+}
+
+.container {
+    box-sizing: border-box;
+    max-height: 100px;
 }
