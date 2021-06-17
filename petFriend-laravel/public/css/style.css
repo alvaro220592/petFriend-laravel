@@ -4,7 +4,14 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    
 }
+/* 
+body{
+    background-image:linear-gradient(rgba(255, 255, 255, 0.788), rgba(255, 255, 255, 0.753)), url(../img/wallpaper.jpg);
+    background-repeat: no-repeat;
+	background-size: cover;
+} */
 
 #logo-img {
     width: 30px;
@@ -44,6 +51,15 @@
 .container{
     height: 67vh;
     overflow-y:scroll;
+}
+
+.agendamento{
+    margin: 20px auto;
+}
+
+.agendamento p{
+    font-size: 25px;
+    margin: 0;
 }
 
 .copy {

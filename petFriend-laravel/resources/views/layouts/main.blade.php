@@ -52,7 +52,7 @@
                 </div>
             </nav>
         </header>
-        <div class="container">
+        <div class="container w-50 bg-light">
         
             @yield('content')
         
