@@ -9,4 +9,9 @@ class PetController extends Controller
     public function index() {
         return view('index');
     }
+
+    public function agendar(){
+        return view('agendar');
+    }
+
 }

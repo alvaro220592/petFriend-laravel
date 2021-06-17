@@ -40,26 +40,25 @@
                     </a>
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a href="/" class="nav-link">Eventos</a>
+                            <a href="/" class="nav-link">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a href="/events/create" class="nav-link">Criar Evento</a>
+                            <a href="/agendar" class="nav-link">Agendar</a>
                         </li>
                         <li class="nav-item">
-                            <a href="" class="nav-link">Entrar</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="" class="nav-link">Cadastrar</a>
+                            <a href="" class="nav-link">Cadastros</a>
                         </li>
                     </ul>
                 </div>
             </nav>
         </header>
+        <div class="container">
         
-        @yield('content')
-
-        <footer>
-            <p>PetFriend &copy;</p>
+            @yield('content')
+        
+        </div>
+        <footer class="mt-3">
+            <p class="copy text-center">PetFriend {{date('Y')}} &copy;</p>
         </footer>
     </body>
 </html>

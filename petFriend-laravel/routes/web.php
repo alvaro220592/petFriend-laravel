@@ -15,3 +15,5 @@ use App\Http\Controllers\PetController;
 */
 
 Route::get("/", [PetController::class, 'index']);
+
+Route::get('/agendar', [PetController::class, 'agendar']);
