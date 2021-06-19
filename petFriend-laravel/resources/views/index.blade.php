@@ -1,6 +1,8 @@
 @extends('layouts.main')
 @section('title', 'PetFriend - Início')
 @section('content')
+
+<h1 class="text-center mt-3" id="page-title">Agendamentos</h1>
     
     <div class="agendamento">
         <p>Pet: Flip</p>
