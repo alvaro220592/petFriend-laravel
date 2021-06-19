@@ -56,14 +56,20 @@
             </nav>--}}
             <nav class="navbar navbar-expand-lg navbar-light bg-warning">
                 <div class="container-fluid">
-                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                  </button>
-                  <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-                    <a class="navbar-brand" href="#">
+
+                    <a class="navbar-brand text-primary" href="#">
                         <h1 id="logo-title">PetFriend<ion-icon name="paw" class="fs-4 mb-3"></ion-icon></h1>
-                        <span id="logo-subtitle">Para o seu melhor amigo</span>
+                        <span id="logo-subtitle" class="fs-3">Para o seu melhor amigo</span>
                     </a>
+
+                {{-- botão collapse --}}
+                  <button class="navbar-toggler text-primary" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                    {{--<span class="navbar-toggler-icon"></span>--}}
+                    <ion-icon name="menu-outline" class="fs-1"></ion-icon>
+                  </button>
+
+                  <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                    
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 mx-5">
                       <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="{{url('/')}}">Início</a>
@@ -84,8 +90,10 @@
                       </li>
                     </ul>
                     <form class="d-flex">
-                      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                      <button class="btn btn-outline-success" type="submit">Search</button>
+                        <input class="form-control me-2 fs-3" type="search" placeholder="Procurar" aria-label="Search">
+                        <button class="btn btn-outline-dark" type="submit">
+                            <ion-icon name="search" class="fs-3 mt-2"></ion-icon>
+                        </button>
                     </form>
                   </div>
                 </div>
