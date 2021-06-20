@@ -3,8 +3,7 @@
     font-weight: bold;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    
+    box-sizing: border-box;    
 }
 /* 
 body{
@@ -13,6 +12,14 @@ body{
 	background-size: cover;
 } */
 
+nav {
+    background-color: #AA0000;
+}
+
+/*.nav-item a:hover{
+    transform: 1s;
+    color:lightgrey;    
+}*/
 
 
 #logo-img {
@@ -23,6 +30,10 @@ body{
     text-align: center;
     padding: 0 20px;
     margin: 0 auto;
+}
+
+#logo-title, #logo-subtitle, .nav-link {
+    color: white;
 }
 
 #logo-title {

@@ -28,42 +28,16 @@
     </head>
     <body class="antialiased">
         <header>
-            {{--<nav class="navbar navbar-expand-lg navbar-light">
-                <div class="collapse navbar-collapse" id="navbar">
-                    <a href="/" class="navbar-brand">
-                        <div class="logo-container">
-                            <div id="title-subtitle-container">
-                                <h1 id="logo-title">PetFriend</h1>
-                                <span id="logo-subtitle">Para o seu melhor amigo</span>
-                                <img src="/img/dog-track2.svg" alt="" id="logo-img" class="mb-2 mx-1">
-                            </div>
-                            {{--<img src="/img/dog-track.png" alt="" id="logo-img" class="mx-3 mt-3">--}}
-                            
-                        {{--</div>
-                    </a>
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a href="/" class="nav-link">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="/agendar" class="nav-link">Agendar</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="" class="nav-link">Cadastros</a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>--}}
-            <nav class="navbar navbar-expand-lg navbar-light bg-warning">
+            <nav class="navbar navbar-expand-lg navbar-light">
                 <div class="container-fluid">
 
-                    <a class="navbar-brand text-primary" href="#">
+                    <a class="navbar-brand" href="#">
                         <h1 id="logo-title">PetFriend<ion-icon name="paw" class="fs-4 mb-3"></ion-icon></h1>
                         <span id="logo-subtitle" class="fs-3">Para o seu melhor amigo</span>
                     </a>
 
                 {{-- botão collapse --}}
-                  <button class="navbar-toggler text-primary" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
                     {{--<span class="navbar-toggler-icon"></span>--}}
                     <ion-icon name="menu-outline" class="fs-1"></ion-icon>
                   </button>
@@ -72,7 +46,7 @@
                     
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 mx-5">
                       <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{{url('/')}}">Início</a>
+                        <a class="nav-link link-secondary" aria-current="page" href="{{url('/')}}">Início</a>
                       </li>
                       <li class="nav-item">
                         <a class="nav-link" href="{{url('agendar')}}">Agendar</a>
