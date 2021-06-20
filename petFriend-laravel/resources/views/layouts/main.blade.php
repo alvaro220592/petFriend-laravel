@@ -37,9 +37,9 @@
                     </a>
 
                 {{-- botão collapse --}}
-                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                  <button class="btn btn-danger navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
                     {{--<span class="navbar-toggler-icon"></span>--}}
-                    <ion-icon name="menu-outline" class="fs-1"></ion-icon>
+                    <ion-icon name="menu-outline" class="fs-1 text-light"></ion-icon>
                   </button>
 
                   <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
@@ -52,7 +52,7 @@
                         <a class="link-light align-middle" href="{{url('agendar')}}">Agendar</a>
                       </li>
                       <li class="nav-item dropdown">
-                        <a class="dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="link-light align-middle dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                           Cadastros
                         </a>
                         <ul class="dropdown-menu fs-3" aria-labelledby="navbarDropdown">
@@ -65,21 +65,23 @@
                     </ul>
                     <form class="d-flex">
                         <input class="form-control me-2 fs-3" type="search" placeholder="Procurar" aria-label="Search">
-                        <button class="btn btn-outline-dark" type="submit">
-                            <ion-icon name="search" class="fs-3 mt-2"></ion-icon>
+                        <button class="btn btn-outline-danger" type="submit">
+                            <ion-icon name="search" class="fs-3 mt-2" id="lupa"></ion-icon>
                         </button>
                     </form>
                   </div>
                 </div>
               </nav>
         </header>
-        <div class="container w-75 bg-light">
+        <div class="container w-100 bg-light" id="container">
         
             @yield('content')
         
         </div>
         <footer class="mt-3">
-            <p class="copy text-center">PetFriend {{date('Y')}} &copy;</p>
+            <p class="copy text-center">
+              PetFriend<ion-icon name="paw" class="fs-6 mb-1"></ion-icon> {{date('Y')}} &copy;
+            </p>
         </footer>
 
         {{-- ION ICONS --}}
