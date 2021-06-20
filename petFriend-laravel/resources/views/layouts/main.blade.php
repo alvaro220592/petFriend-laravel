@@ -46,13 +46,13 @@
                     
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 mx-5">
                       <li class="nav-item">
-                        <a class="nav-link link-secondary" aria-current="page" href="{{url('/')}}">Início</a>
+                        <a class="link-light align-middle" aria-current="page" href="{{url('/')}}">Início</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="{{url('agendar')}}">Agendar</a>
+                        <a class="link-light align-middle" href="{{url('agendar')}}">Agendar</a>
                       </li>
                       <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                           Cadastros
                         </a>
                         <ul class="dropdown-menu fs-3" aria-labelledby="navbarDropdown">

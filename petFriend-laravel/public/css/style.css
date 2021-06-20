@@ -16,11 +16,17 @@ nav {
     background-color: #AA0000;
 }
 
-/*.nav-item a:hover{
-    transform: 1s;
-    color:lightgrey;    
-}*/
+.link-light{
+    text-decoration: none;
+    color:lightgrey;
+    margin: 0 20px;
+}
 
+.link-light:hover{
+    transition: .5s;
+    color: white;
+    justify-content: space-around;
+}
 
 #logo-img {
     width: 30px;
