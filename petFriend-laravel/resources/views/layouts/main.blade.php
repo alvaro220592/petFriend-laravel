@@ -73,14 +73,14 @@
                 </div>
               </nav>
         </header>
-        <div class="container w-100 bg-light" id="container">
+        
         
             @yield('content')
         
-        </div>
-        <footer class="footer-expand-lg fixed-bottom mt-3 p-3 bg-light">
+        
+        <footer class="footer-expand-lg fixed-bottom mt-3 p-3 ">
             <p class="copy text-center">
-              PetFriend<ion-icon name="paw" class="fs-6 mb-1"></ion-icon> {{date('Y')}} &copy;
+              PetFriend<ion-icon name="paw" class="fs-6 mb-1"></ion-icon>  &copy {{date('Y')}};
             </p>
         </footer>
 

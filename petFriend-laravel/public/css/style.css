@@ -5,14 +5,16 @@
     padding: 0;
     box-sizing: border-box;    
 }
-/* 
+ 
 body{
-    background-image:linear-gradient(rgba(255, 255, 255, 0.788), rgba(255, 255, 255, 0.753)), url(../img/wallpaper.jpg);
+    background-image:linear-gradient(rgba(255, 255, 255, 0.7), 
+        rgba(255, 255, 255, 0.7)), url(../img/wallpaper.jpg);
     background-repeat: no-repeat;
 	background-size: cover;
-} */
+    background-attachment: fixed;
+} 
 
-nav {
+nav, footer {
     background-color: #AA0000;
 }
 
@@ -62,20 +64,22 @@ nav {
     font-weight: bold;
 }
 
+
+
 #lupa{
     color: white;
 }
 
 
-#page-title{
-    justify-content: center;
-    font-weight: bold;
+h2 {
+    margin-top: 150px;
+    font-size: 35px;
+    text-align: center;
 }
 
 .container{
-    /*height: 67vh;*/
-    /*overflow-y:scroll;*/
-    margin-top: 150px;
+    height: 69vh;
+    overflow-y:scroll;
 
 }
 
@@ -92,12 +96,17 @@ nav {
     font-weight: bold;
     font-size: 25px;
     margin:0;
-    margin: 0 10px ;
+    margin: 0 10px;
+    color:white;
 }
 
 @media(max-width:486px){
     .link-light{
         color:white;      
         margin-left: -30px;  
+    }
+
+    footer{
+        margin-top: 150px;
     }
 }
