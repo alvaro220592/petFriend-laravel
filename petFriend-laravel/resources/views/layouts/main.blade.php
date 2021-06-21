@@ -28,7 +28,7 @@
     </head>
     <body class="antialiased">
         <header>
-            <nav class="navbar navbar-expand-lg navbar-light">
+            <nav class="navbar navbar-expand-lg fixed-top navbar-light">
                 <div class="container-fluid">
 
                     <a class="navbar-brand" href="#">
@@ -78,7 +78,7 @@
             @yield('content')
         
         </div>
-        <footer class="mt-3">
+        <footer class="footer-expand-lg fixed-bottom mt-3 p-3 bg-light">
             <p class="copy text-center">
               PetFriend<ion-icon name="paw" class="fs-6 mb-1"></ion-icon> {{date('Y')}} &copy;
             </p>
