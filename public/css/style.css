@@ -1,6 +1,6 @@
 * {
     font-family: 'Amatic SC', sans-serif;
-    font-weight: bold;
+    font-weight: 700;
     margin: 0;
     padding: 0;
     box-sizing: border-box;    
@@ -112,6 +112,18 @@ h2 {
 #btn-cadastro:hover{
     transition: .5s;
     background-color: #7c0000;
+}
+
+.form-control, label{
+    font-size: 20px;
+}
+
+label{
+    margin-top: 20px;
+}
+
+input[type=submit]{
+    font-size: 27px;
 }
 
 @media(max-width:486px){
