@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PetController;
+use App\Http\Controllers\ClientController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,3 +18,5 @@ use App\Http\Controllers\PetController;
 Route::get("/", [PetController::class, 'index']);
 
 Route::get('/agendar', [PetController::class, 'agendar']);
+
+Route::get('/clients/cadastro',[ClientController::class, 'index']);

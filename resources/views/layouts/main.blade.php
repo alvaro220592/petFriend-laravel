@@ -56,7 +56,7 @@
                           Cadastros
                         </a>
                         <ul class="dropdown-menu fs-3" aria-labelledby="navbarDropdown">
-                          <li><a class="dropdown-item" href="#">Clientes</a></li>
+                          <li><a class="dropdown-item" href="{{url('clients/cadastro')}}">Clientes</a></li>
                           <li><a class="dropdown-item" href="#">Pets</a></li>
                           <li><hr class="dropdown-divider"></li>
                           <li><a class="dropdown-item" href="#">Usuários</a></li>
@@ -74,8 +74,11 @@
               </nav>
         </header>
         
+          <div class="container" id="">
         
             @yield('content')
+
+          </div>
         
         
         <footer class="footer-expand-lg fixed-bottom mt-3 p-3 ">

@@ -78,9 +78,12 @@ h2 {
 }
 
 .container{
-    height: 69vh;
-    overflow-y:scroll;
+}
 
+#schedule-container{
+    height: 60vh;
+    overflow-y:scroll;
+    background: rgba(255, 255, 255, 0.5);
 }
 
 .agendamento{
@@ -98,6 +101,17 @@ h2 {
     margin:0;
     margin: 0 10px;
     color:white;
+}
+
+
+#btn-cadastro{
+    background-color: #AA0000;
+    color: white;
+}
+
+#btn-cadastro:hover{
+    transition: .5s;
+    background-color: #7c0000;
 }
 
 @media(max-width:486px){

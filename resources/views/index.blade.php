@@ -4,7 +4,7 @@
 
 <h2 class="" id="">Agendamentos</h2>
 
-<div class="container w-100 bg-light" id="container">
+<div class="" id="schedule-container">
     
     <div class="agendamento">
         <p>Pet: Flip</p>
