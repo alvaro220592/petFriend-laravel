@@ -52,9 +52,9 @@
             <input type="text" class="form-control" id="title" name="title" placeholder="Insira o título">
         </div>
 
-        <div class="row" id="">
-        	<div class="form-group col-lg-12 mt-4 text-center">
-        		<input type="submit" class="btn w-50 " value="Cadastrar" name="" id="btn-cadastro">
+        <div class="row justify-content-center" id="">
+        	<div class="form-group col-lg-6 mt-4 text-center">
+        		<input type="submit" class="btn w-50" value="Cadastrar" name="" id="btn-cadastro">
         	</div>
         </div>
     </div>
