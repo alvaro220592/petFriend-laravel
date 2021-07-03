@@ -54,7 +54,7 @@
 
         <div class="row justify-content-center" id="">
         	<div class="form-group col-lg-6 mt-4 text-center">
-        		<input type="submit" class="btn w-50" value="Cadastrar" name="" id="btn-cadastro">
+        		<input type="submit" class="btn btn-outline-light btn-geral w-50" value="Cadastrar" name="" id="">
         	</div>
         </div>
     </div>

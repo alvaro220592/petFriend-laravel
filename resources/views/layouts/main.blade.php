@@ -65,7 +65,7 @@
                     </ul>
                     <form class="d-flex">
                         <input class="form-control me-2 fs-3" type="search" placeholder="Procurar" aria-label="Search">
-                        <button class="btn btn-outline-danger" type="submit">
+                        <button class="btn btn-outline-light btn-geral" type="submit">
                             <ion-icon name="search" class="fs-3 mt-2" id="lupa"></ion-icon>
                         </button>
                     </form>
@@ -83,7 +83,7 @@
         
         <footer class="footer-expand-lg fixed-bottom mt-3 p-3 ">
             <p class="copy text-center">
-              PetFriend<ion-icon name="paw" class="fs-6 mb-1"></ion-icon>  &copy {{date('Y')}};
+              PetFriend<ion-icon name="paw" class="fs-6 mb-1"></ion-icon>  &copy {{date('Y')}}
             </p>
         </footer>
 

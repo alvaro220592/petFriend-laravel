@@ -104,14 +104,15 @@ h2 {
 }
 
 
-#btn-cadastro{
+.btn-geral{
     background-color: #AA0000;
     color: white;
 }
 
-#btn-cadastro:hover{
-    transition: .5s;
+.btn-geral:hover{
+    transition: .3s;
     background-color: #7c0000;
+    color: white;
 }
 
 .form-control, label{
