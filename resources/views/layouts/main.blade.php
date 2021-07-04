@@ -13,7 +13,18 @@
 
         {{--Acme--}}
         <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Acme&family=Amatic+SC:wght@400;700&display=swap" rel="stylesheet"> 
+        <link href="https://fonts.googleapis.com/css2?family=Acme&family=Amatic+SC:wght@400;700&display=swap" rel="stylesheet">
+
+        {{--Yomogi--}}
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Yomogi&display=swap" rel="stylesheet">
+
+        {{----}}
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Mali:wght@300&display=swap" rel="stylesheet">
+        
 
 
         {{--bootstrap--}}
@@ -32,12 +43,12 @@
                 <div class="container-fluid">
 
                     <a class="navbar-brand" href="#">
-                        <h1 id="logo-title">PetFriend<ion-icon name="paw" class="fs-4 mb-3"></ion-icon></h1>
-                        <span id="logo-subtitle" class="fs-3">Para o seu melhor amigo</span>
+                        <h1 id="logo-title">PetFriend<ion-icon name="paw" class="fs-4 mb-3 mx-1"></ion-icon></h1>
+                        <span id="logo-subtitle" class="fs-5">Para o seu melhor amigo</span>
                     </a>
 
                 {{-- botão collapse --}}
-                  <button class="btn btn-danger navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                  <button class="btn navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
                     {{--<span class="navbar-toggler-icon"></span>--}}
                     <ion-icon name="menu-outline" class="fs-1 text-light"></ion-icon>
                   </button>
@@ -55,7 +66,7 @@
                         <a class="link-light align-middle dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                           Cadastros
                         </a>
-                        <ul class="dropdown-menu fs-3" aria-labelledby="navbarDropdown">
+                        <ul class="dropdown-menu fs-5" aria-labelledby="navbarDropdown">
                           <li><a class="dropdown-item" href="{{url('clients/cadastro')}}">Clientes</a></li>
                           <li><a class="dropdown-item" href="#">Pets</a></li>
                           <li><hr class="dropdown-divider"></li>
@@ -64,7 +75,7 @@
                       </li>
                     </ul>
                     <form class="d-flex">
-                        <input class="form-control me-2 fs-3" type="search" placeholder="Procurar" aria-label="Search">
+                        <input class="form-control me-2 fs-5" type="search" placeholder="Procurar" aria-label="Search">
                         <button class="btn btn-outline-light btn-geral" type="submit">
                             <ion-icon name="search" class="fs-3 mt-2" id="lupa"></ion-icon>
                         </button>
@@ -83,7 +94,7 @@
         
         <footer class="footer-expand-lg fixed-bottom mt-3 p-3 ">
             <p class="copy text-center">
-              PetFriend<ion-icon name="paw" class="fs-6 mb-1"></ion-icon>  &copy {{date('Y')}}
+              PetFriend<ion-icon name="paw" class="fs-6 mb-1 mx-1"></ion-icon>  &copy {{date('Y')}}
             </p>
         </footer>
 
