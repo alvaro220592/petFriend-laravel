@@ -9,6 +9,14 @@ class Client extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+    	
+    	'name',
+    	'lastname',
+    	'address_num',
+    
+    ]
+
     public function street(){
     	return $this->belongsTo(Street::class);
     }

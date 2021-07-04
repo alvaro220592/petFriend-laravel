@@ -9,6 +9,12 @@ class City extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+
+    	'city',
+        
+    ]
+
     pubilc function state(){
     	return $this->belongsTo(State::class);
     }
