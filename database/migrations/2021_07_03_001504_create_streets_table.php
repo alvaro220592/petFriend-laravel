@@ -16,6 +16,9 @@ class CreateStreetsTable extends Migration
         Schema::create('streets', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->string('street');
+            $table->zipcode('string');
+            $table->foreignId('city_id')->constraint()->references('id')->on('cities')->onDelete('cascade');
         });
     }
 
