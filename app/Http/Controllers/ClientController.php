@@ -33,6 +33,7 @@ class ClientController extends Controller
 			$street->street => $request->city,
 			$client->name => $request->name,
 			$client->lastname => $request->lastname,
+			$client->address_num => $request->address_num,
 			$email->email => $request->email,
 			$phone->phone => $request->phone,
 		];
@@ -40,6 +41,9 @@ class ClientController extends Controller
     	$state->create($dataForm);		
 		$city = $city->state()->create($dataForm);
 		$street = $street->city()->create($dataForm);
+		$client = $client->address()->create($dataForm);
+		$email = $email->client()->create($dataForm);
+		$phone = $phone->client()->create($dataForm);
 
     }
 }
