@@ -15,7 +15,7 @@ class Client extends Model
     	'lastname',
     	'address_num',
     
-    ]
+    ];
 
     public function street(){
     	return $this->belongsTo(Street::class);

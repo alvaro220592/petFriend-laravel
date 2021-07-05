@@ -14,7 +14,7 @@ class Street extends Model
     	'street',
     	'zipcode',
 
-    ]
+    ];
 
     public function city(){
     	return $this->belongsTo(City::class);

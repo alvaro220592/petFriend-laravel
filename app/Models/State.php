@@ -13,7 +13,7 @@ class State extends Model
     	
     	'initials'
     
-    ]
+    ];
 
     public function cities(){
     	return $this->hasMany(City::class);
