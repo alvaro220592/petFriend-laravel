@@ -17,7 +17,7 @@ class CreateStreetsTable extends Migration
             $table->id();
             $table->timestamps();
             $table->string('street');
-            $table->zipcode('string');
+            $table->string('zipcode');
             $table->foreignId('city_id')->constraint()->references('id')->on('cities')->onDelete('cascade');
         });
     }

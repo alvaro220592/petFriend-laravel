@@ -19,7 +19,7 @@ class CreateClientsTable extends Migration
             $table->string('name');
             $table->string('lastname');
             $table->string('address_num');
-            $table->foreignId('address_id')->constraint()->references('id')->on('addresses')->onDelete('cascade');
+            $table->foreignId('street_id')->constraint()->references('id')->on('streets')->onDelete('cascade');
         });
     }
 
