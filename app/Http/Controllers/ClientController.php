@@ -21,13 +21,20 @@ class ClientController extends Controller
     public function store(Request $request){
 
 		$state = new State;
-		$city = new city;
-		$street = new street;
+		$city = new City;
+		$street = new Street;
+		$client = new Client;
+		$email = new Email;
+		$phone = new Phone;
 
     	$dataForm = [
     		$state->initials => $request->state,
 			$city->city => $request->city,
-			$street->street => $request->city
+			$street->street => $request->city,
+			$client->name => $request->name,
+			$client->lastname => $request->lastname,
+			$email->email => $request->email,
+			$phone->phone => $request->phone,
 		];
 
     	$state->create($dataForm);		
