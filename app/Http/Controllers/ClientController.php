@@ -27,43 +27,28 @@ class ClientController extends Controller
 		$email = new Email;
 		$phone = new Phone;
 
-		// $state->initials = $request->initials;
-		// $state->save();
-		$state->firstOrCreate(['initials' => $request->initials]);
-		$estado = State::where('initials', $request->initials)->pluck('id')->first();
+		// Cadastro de estados
+		$state->firstOrCreate([
+			'initials' => $request->initials
+		]);
+		
+		// buscando o id do estado referente ao digitado no campo:
+		$state_id = State::where('initials', $request->initials)->pluck('id')->first();
 
-		// $city->city = $request->city;
-		// $city->state_id = $state->id;
-		$city->firstOrCreate(['city' => $request->city,
-			'state_id' => $estado
+		// Cadastro de cidades
+		$city->firstOrCreate([
+			'city' => $request->city,
+			'state_id' => $state_id
 		]);
 
-    	// $dataForm = [
-		// 	'initials' => $request->initials,
-    	// 	'city' => $request->city,
-		// 	'state_id' => $state->id,
-		// 	$street->street => $request->street,
-		// 	$street->zipcode => $request->zipcode,
-		// 	$street->city_id => $city->id,
-		// 	$client->name => $request->name,
-		// 	$client->lastname => $request->lastname,
-		// 	$client->street_id => $street->id,
-		// 	$email->email => $request->email,
-		// 	$email->client_id => $client->id,
-		// 	$phone->phone => $request->phone,
-		// 	$phone->client_id => $client->id,
-		// ];
+		// buscando o id da cidade referente ao digitado no campo:
+		$city_id = City::where('city', $request->city)->pluck('id')->first();
 
-		
-		
-    	// $state->save();
-		// $city->save();
-		// $city->state()->create($dataForm);
-		// $street->city()->create($dataForm);
-		// $client->street()->create($dataForm);
-		// $client->create($dataForm);
-		// $email->client()->create($dataForm);
-		// $phone->client()->create($dataForm);
+		$street->firstOrCreate([
+			'street' => $request->street,
+			'zipcode' => $request->zipcode,
+			'city_id' => $city_id
+		]);
 
 		return redirect('/');
 
