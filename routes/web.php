@@ -19,6 +19,8 @@ Route::get("/", [PetController::class, 'index']);
 
 Route::get('/agendar', [PetController::class, 'agendar']);
 
-Route::get('/clients/cadastro',[ClientController::class, 'index']);
+Route::get('/clients/cadastro',[ClientController::class, 'cadastro']);
 
 Route::post('/clients', [ClientController::class, 'store']);
+
+Route::get('/pets/cadastro', [PetController::class, 'cadastro']);

@@ -12,7 +12,7 @@ use App\Models\Email;
 
 class ClientController extends Controller
 {
-    public function index(){
+    public function cadastro(){
 
     	return view('clients.cadastro');
 

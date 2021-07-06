@@ -29,4 +29,8 @@ class Client extends Model
     public function email(){
         return $this->hasMany(Email::class);
     }
+
+    public function pets(){
+        return $this->hasMany(Pet::class);
+    }
 }
