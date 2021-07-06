@@ -27,29 +27,37 @@ class ClientController extends Controller
 		$email = new Email;
 		$phone = new Phone;
 
-		$state->initials = $request->initials;
+		// $state->initials = $request->initials;
+		// $state->save();
+		$state->firstOrCreate(['initials' => $request->initials]);
+		$estado = State::where('initials', $request->initials)->pluck('id')->first();
+
+		// $city->city = $request->city;
+		// $city->state_id = $state->id;
+		$city->firstOrCreate(['city' => $request->city,
+			'state_id' => $estado
+		]);
+
+    	// $dataForm = [
+		// 	'initials' => $request->initials,
+    	// 	'city' => $request->city,
+		// 	'state_id' => $state->id,
+		// 	$street->street => $request->street,
+		// 	$street->zipcode => $request->zipcode,
+		// 	$street->city_id => $city->id,
+		// 	$client->name => $request->name,
+		// 	$client->lastname => $request->lastname,
+		// 	$client->street_id => $street->id,
+		// 	$email->email => $request->email,
+		// 	$email->client_id => $client->id,
+		// 	$phone->phone => $request->phone,
+		// 	$phone->client_id => $client->id,
+		// ];
+
 		
-		$city->city = $request->city;
-		$city->state_id = $state->id;
-
-    	$dataForm = [
-			// $state->initials => 'SP',
-    		// $city->city => $request->city,
-			// $city->state_id => $state->id,
-			// $street->street => $request->street,
-			// $street->zipcode => $request->zipcode,
-			// $street->city_id => $city->id,
-			// $client->name => $request->name,
-			// $client->lastname => $request->lastname,
-			// $client->street_id => $street->id,
-			// $email->email => $request->email,
-			// $email->client_id => $client->id,
-			// $phone->phone => $request->phone,
-			// $phone->client_id => $client->id,
-		];
-
-    	$state->save();
-		$city->save();
+		
+    	// $state->save();
+		// $city->save();
 		// $city->state()->create($dataForm);
 		// $street->city()->create($dataForm);
 		// $client->street()->create($dataForm);
