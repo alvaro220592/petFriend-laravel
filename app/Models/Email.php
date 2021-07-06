@@ -10,7 +10,7 @@ class Email extends Model
     use HasFactory;
 
     protected $fillable = [
-
+        'email',
         'client_id'
 
     ];

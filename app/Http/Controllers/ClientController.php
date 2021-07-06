@@ -43,11 +43,35 @@ class ClientController extends Controller
 
 		// buscando o id da cidade referente ao digitado no campo:
 		$city_id = City::where('city', $request->city)->pluck('id')->first();
-
+		// $zipcode = Street::where('zipcode', $request->zipcode)->pluck('zipcode')->first();
 		$street->firstOrCreate([
 			'street' => $request->street,
 			'zipcode' => $request->zipcode,
 			'city_id' => $city_id
+		]);
+
+		// cadastrando cliente
+		$street_id = Street::where('street', $request->street)->pluck('id')->first();		
+		$client->firstOrCreate([
+			'name' => $request->name,
+			'lastname' => $request->lastname,
+			'address_num' =>$request->address_num,
+			'street_id' => $street_id
+		]);
+
+		// pegando id do cliente com o nome e sobrenome descritos nos campos pra associar o email
+		$client_id = Client::where('name', $request->name)
+			->where('lastname', $request->lastname)
+			->pluck('id')->first();
+
+		$email->firstOrCreate([
+			'email' => $request->email,
+			'client_id' => $client_id
+		]);
+
+		$phone->firstOrCreate([
+			'phone' => $request->phone,
+			'client_id' => $client_id
 		]);
 
 		return redirect('/');
