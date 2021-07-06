@@ -13,6 +13,7 @@ class Street extends Model
 
     	'street',
     	'zipcode',
+        'city_id'
 
     ];
 

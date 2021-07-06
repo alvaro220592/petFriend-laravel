@@ -27,24 +27,35 @@ class ClientController extends Controller
 		$email = new Email;
 		$phone = new Phone;
 
+		$state->initials = $request->initials;
+		
+		$city->city = $request->city;
+		$city->state_id = $state->id;
+
     	$dataForm = [
-    		$state->initials => $request->initials,
-			$city->city => $request->city,
-			$street->street => $request->city,
-			$client->name => $request->name,
-			$client->lastname => $request->lastname,
-			$client->address_num => $request->address_num,
-			$email->email => $request->email,
-			$phone->phone => $request->phone,
+			// $state->initials => 'SP',
+    		// $city->city => $request->city,
+			// $city->state_id => $state->id,
+			// $street->street => $request->street,
+			// $street->zipcode => $request->zipcode,
+			// $street->city_id => $city->id,
+			// $client->name => $request->name,
+			// $client->lastname => $request->lastname,
+			// $client->street_id => $street->id,
+			// $email->email => $request->email,
+			// $email->client_id => $client->id,
+			// $phone->phone => $request->phone,
+			// $phone->client_id => $client->id,
 		];
 
-    	$state->create($dataForm);		
-		$city->state()->create($dataForm);
-		$street->city()->create($dataForm);
-		$client->street()->create($dataForm);
-		$client->create($dataForm);
-		$email->client()->create($dataForm);
-		$phone->client()->create($dataForm);
+    	$state->save();
+		$city->save();
+		// $city->state()->create($dataForm);
+		// $street->city()->create($dataForm);
+		// $client->street()->create($dataForm);
+		// $client->create($dataForm);
+		// $email->client()->create($dataForm);
+		// $phone->client()->create($dataForm);
 
 		return redirect('/');
 
