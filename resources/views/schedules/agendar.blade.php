@@ -7,7 +7,7 @@
         
     <form action="/agendar" method="post">
         @csrf
-        <div class="row justify-content-lg-center" id="">
+        <div class="row" id="">
 
             <div class="form-group col-lg-3">
                 <label for="tutor">Tutor</label>
@@ -29,13 +29,13 @@
                 </select>
             </div>
 
-            <div class="form-group col-lg-2">
+            <div class="form-group col-lg-3">
                 <label for="service">Serviço</label>
                 <select name="service" id="" class="form-control">
                     <option value="">Selecione</option>
-                    {{-- @foreach($pets as $pet) --}}
-                        <option value="{{--$service->name--}}">serviço 1</option>
-                    {{-- @endforeach --}}
+                        <option value="banho">Banho</option>
+                        <option value="tosa">Tosa</option>
+                        <option value="consulta">Consulta vet.</option>
                 </select>
             </div>
 
@@ -48,7 +48,7 @@
                 </select>
             </div>
 
-            <div class="form-group col-lg-3">
+            <div class="form-group col-lg-2">
                 <label for="breed">Quando?</label>
                 <input type="datetime-local" class="form-control" id="breed" name="breed" placeholder="Insira a raça/SRD">
             </div>
