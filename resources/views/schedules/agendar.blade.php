@@ -24,12 +24,12 @@
                 <select name="pet" id="" class="form-control">
                     <option value="">Selecione o pet</option>
                     @foreach($pets as $pet)
-                        <option value="">{{$pet->name}}</option>
+                        <option value="{{$pet->id}}">{{$pet->name}}</option>
                     @endforeach
                 </select>
             </div>
 
-            <div class="form-group col-lg-3">
+            <div class="form-group col-lg-2">
                 <label for="service">Serviço</label>
                 <select name="service" id="" class="form-control">
                     <option value="">Selecione</option>
@@ -41,16 +41,16 @@
 
             <div class="form-group col-lg-2">
                 <label for="species">Buscar em casa?</label>
-                <select name="tutor" id="" class="form-control">
+                <select name="pick_up" id="" class="form-control">
                     <option value="">Selecione</option>
-                    <option value="">Sim</option>
-                    <option value="">Não</option>
+                    <option value="Sim">Sim</option>
+                    <option value="Não">Não</option>
                 </select>
             </div>
 
-            <div class="form-group col-lg-2">
+            <div class="form-group col-lg-3">
                 <label for="breed">Quando?</label>
-                <input type="datetime-local" class="form-control" id="breed" name="breed" placeholder="Insira a raça/SRD">
+                <input type="datetime-local" class="form-control" id="dateTime" name="dateTime" placeholder="Insira a raça/SRD">
             </div>
         </div>
 

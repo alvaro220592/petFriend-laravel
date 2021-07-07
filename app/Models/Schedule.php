@@ -13,6 +13,7 @@ class Schedule extends Model
         'service',
         'pick_up',
         'dateTime',
+        'pick_up',
         'user_id',
         'client_id',
         'pet_id'

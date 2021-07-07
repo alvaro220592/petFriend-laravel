@@ -30,7 +30,10 @@ class ScheduleController extends Controller
         $schedule->service = $request->service;
         $schedule->pick_up = $request->pick_up;
         $schedule->dateTime = $request->dateTime;
+        $schedule->client_id = $request->tutor;
+        $schedule->pet_id = $request->pet;
         $schedule->user_id = 1;
+        
         $schedule->save();
     }
 }
