@@ -16,7 +16,7 @@ use App\Http\Controllers\ScheduleController;
 |
 */
 
-Route::get("/", [PetController::class, 'index']);
+Route::get("/", [ScheduleController::class, 'index']);
 
 Route::get('/agendar', [ScheduleController::class, 'agendar']);
 

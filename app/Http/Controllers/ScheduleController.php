@@ -9,6 +9,14 @@ use App\Models\Client;
 
 class ScheduleController extends Controller
 {
+
+    public function index() {
+
+        
+
+        return view('index',[
+        ]);
+    }
     
     public function agendar(){
 

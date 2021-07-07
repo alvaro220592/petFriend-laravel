@@ -9,7 +9,7 @@ use App\Models\Pet;
 class PetController extends Controller
 {
     public function index() {
-        return view('index');
+        //return view('index');
     }
 
     public function cadastro(){
