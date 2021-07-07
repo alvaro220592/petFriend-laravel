@@ -12,10 +12,6 @@ class PetController extends Controller
         return view('index');
     }
 
-    public function agendar(){
-        return view('agendar');
-    }
-
     public function cadastro(){
         $clients = Client::all();
 

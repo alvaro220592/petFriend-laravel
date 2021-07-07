@@ -18,7 +18,17 @@ class Pet extends Model
         'client_id'
     ];
 
+    protected $dates = ['datetime'];
+
+    protected $casts = [
+        'service' => 'array'
+    ];
+
     public function client(){
         return $this->belongsTo(Client::class);
+    }
+
+    public function schedules(){
+        return $this->hasMany(Schedules::class);
     }
 }

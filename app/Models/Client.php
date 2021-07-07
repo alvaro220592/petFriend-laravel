@@ -33,4 +33,8 @@ class Client extends Model
     public function pets(){
         return $this->hasMany(Pet::class);
     }
+
+    public function schedules(){
+        return $this->hasMany(Schedules::class);
+    }
 }

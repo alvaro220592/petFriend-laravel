@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PetController;
 use App\Http\Controllers\ClientController;
+use App\Http\Controllers\ScheduleController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,7 +18,7 @@ use App\Http\Controllers\ClientController;
 
 Route::get("/", [PetController::class, 'index']);
 
-Route::get('/agendar', [PetController::class, 'agendar']);
+Route::get('/agendar', [ScheduleController::class, 'agendar']);
 
 Route::get('/clients/cadastro',[ClientController::class, 'cadastro']);
 
@@ -26,3 +27,5 @@ Route::post('/clients', [ClientController::class, 'store']);
 Route::get('/pets/cadastro', [PetController::class, 'cadastro']);
 
 Route::post('/pets', [PetController::class, 'store']);
+
+Route::post('/agendar', [ScheduleController::class, 'store']);
