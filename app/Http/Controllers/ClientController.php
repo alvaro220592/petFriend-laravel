@@ -43,7 +43,6 @@ class ClientController extends Controller
 
 		// buscando o id da cidade referente ao digitado no campo:
 		$city_id = City::where('city', $request->city)->pluck('id')->first();
-		// $zipcode = Street::where('zipcode', $request->zipcode)->pluck('zipcode')->first();
 		$street->firstOrCreate([
 			'street' => $request->street,
 			'zipcode' => $request->zipcode,
