@@ -19,10 +19,10 @@ class CreateSchedulesTable extends Migration
             $table->string('service');
             $table->string('pick_up');
             $table->dateTime('dateTime');
-            $table->foreignId('user_id')->constraint()->references('id')->on('users')->onDelete('cascade'); 
+            // $table->foreignId('user_id')->constraint()->references('id')->on('users');
             $table->foreignId('client_id')->constraint()->references('id')->on('clients');
             $table->foreignId('pet_id')->constraint()->references('id')->on('pets');
-            // não vai ter onDelete('cascade')
+            // não vai ter onDelete('cascade') e não funcionou a inserção com o user_id
         });
     }
 
