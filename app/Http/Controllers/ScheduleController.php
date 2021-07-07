@@ -35,5 +35,7 @@ class ScheduleController extends Controller
         $schedule->user_id = 1;
         
         $schedule->save();
+
+        return redirect('/');
     }
 }
