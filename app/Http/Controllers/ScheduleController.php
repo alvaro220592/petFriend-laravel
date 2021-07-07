@@ -12,9 +12,29 @@ class ScheduleController extends Controller
 
     public function index() {
 
-        ::table('schedules')->join('clients', 'client_id', 'id')->get();
+        $schedules = Schedule::select([
+            'schedules.service',
+            'schedules.pick_up',
+            'schedules.datetime',
+            'schedules.dateTime',
+            'clients.name',
+            'pets.name',
+            'pets.breed',
+            'pets.gender',
+            'pets.observations',
+            
+        ])->join('clients', function($join){
+
+			$join->on('clients.id', '=', 'schedules.client_id');
+		
+        })->join('pets', function($join){
+
+            $join->on('clients.id', '=', 'pets.client_id');
+
+        })->get();
 
         return view('index',[
+			'schedules' => $schedules
         ]);
     }
     

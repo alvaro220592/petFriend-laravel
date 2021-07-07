@@ -50,7 +50,7 @@
 
             <div class="form-group col-lg-3">
                 <label for="breed">Quando?</label>
-                <input type="datetime-local" class="form-control" id="dateTime" name="dateTime" placeholder="Insira a raça/SRD">
+                <input type="datetime-local" class="form-control" id="dateTime" name="dateTime">
             </div>
         </div>
 
