@@ -14,7 +14,7 @@ class Pet extends Model
         'species',
         'breed',
         'gender',
-        'observarions',
+        'observations',
         'client_id'
     ];
 

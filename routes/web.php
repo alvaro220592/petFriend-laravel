@@ -24,3 +24,5 @@ Route::get('/clients/cadastro',[ClientController::class, 'cadastro']);
 Route::post('/clients', [ClientController::class, 'store']);
 
 Route::get('/pets/cadastro', [PetController::class, 'cadastro']);
+
+Route::post('/pets', [PetController::class, 'store']);

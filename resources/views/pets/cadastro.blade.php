@@ -4,7 +4,7 @@
 
 	<h2 class="" id="">Cadastrar pet</h2>
 
-    <form action="/clients" method="post">
+    <form action="/pets" method="post">
         @csrf
         <div class="row" id="">
             <div class="form-group col-lg-2">
@@ -12,27 +12,27 @@
                 <input type="text" class="form-control" id="name" name="name" placeholder="Insira o nome">
             </div>
             <div class="form-group col-lg-2">
-                <label for="lastname">Espécie</label>
-                <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Insira a espécie">
+                <label for="species">Espécie</label>
+                <input type="text" class="form-control" id="species" name="species" placeholder="Insira a espécie">
             </div>
 
             <div class="form-group col-lg-3">
-                <label for="phone">Raça/SRD</label>
-                <input type="text" class="form-control" id="phone" name="phone" placeholder="Insira a raça/SRD">
+                <label for="breed">Raça/SRD</label>
+                <input type="text" class="form-control" id="breed" name="breed" placeholder="Insira a raça/SRD">
             </div>
+
             <div class="form-group col-lg-2">
-                <label for="phone">Gênero</label>
+                <label for="gender">Gênero</label>
                 <select name="gender" id="" class="form-control">
-                    <option value="">Selecione</option>
-                    
-                    <option value="">Macho</option>
-                    <option value="">Fêmea</option>
+                    <option value="">Selecione</option>                    
+                    <option value="macho">Macho</option>
+                    <option value="femea">Fêmea</option>
                     
                 </select>
             </div>
 
             <div class="form-group col-lg-3">
-                <label for="street">Tutor</label>
+                <label for="tutor">Tutor</label>
                 <select name="tutor" id="" class="form-control">
                     <option value="">Selecione o tutor</option>
                     @foreach($clients as $client)
@@ -48,9 +48,9 @@
 
             
             <div class="form-group col-lg-12">
-                <label for="">Obsevações</label>
+                <label for="observations">Obsevações</label>
                 <div class="form-floating">
-                    <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+                    <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px" name="observations"></textarea>
                     <label for="floatingTextarea2">Insira as observações(Alérgico a perfume, a um remédio específico, etc.)</label>
                 </div>
             </div>
