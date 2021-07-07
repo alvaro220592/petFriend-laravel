@@ -12,7 +12,7 @@ class ScheduleController extends Controller
 
     public function index() {
 
-        
+        ::table('schedules')->join('clients', 'client_id', 'id')->get();
 
         return view('index',[
         ]);
