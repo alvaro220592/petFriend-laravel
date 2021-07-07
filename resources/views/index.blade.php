@@ -21,12 +21,12 @@
     </div>--}}
     @foreach($schedules as $schedule)
         <div class="agendamento">
-            <p>Pet: {{$schedule->name}}</p>
+            <p>Pet: {{$schedule->pet_name}}</p>
             <p>Serviços: {{$schedule->service}}</p>
             <p>Raça: {{$schedule->breed}}</p>
             <p>Gênero: {{$schedule->gender}}</p>
             <p>Observações: {{$schedule->observations}}</p>
-            <p>Tutor: {{$schedule->name}}</p>
+            <p>Tutor: {{$schedule->client_name}}</p>
             {{--<p>Telefone: {{$schedule->}}</p>
             <p>Endereço: {{$schedule->}}</p>--}}
             <p>Buscar em domicílio: {{$schedule->pick_up}}</p>

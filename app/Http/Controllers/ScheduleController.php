@@ -17,12 +17,12 @@ class ScheduleController extends Controller
             'schedules.pick_up',
             'schedules.datetime',
             'schedules.dateTime',
-            'clients.name',
-            'pets.name',
+            'clients.client_name',
+            'pets.pet_name',
             'pets.breed',
             'pets.gender',
             'pets.observations',
-            
+
         ])->join('clients', function($join){
 
 			$join->on('clients.id', '=', 'schedules.client_id');

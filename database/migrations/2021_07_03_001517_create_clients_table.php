@@ -16,8 +16,8 @@ class CreateClientsTable extends Migration
         Schema::create('clients', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->string('name');
-            $table->string('lastname');
+            $table->string('client_name');
+            $table->string('client_lastname');
             $table->string('address_num');
             $table->foreignId('street_id')->constraint()->references('id')->on('streets')->onDelete('cascade');
         });

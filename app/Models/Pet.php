@@ -10,7 +10,7 @@ class Pet extends Model
     use HasFactory;
 
     protected $fillable = [
-        'name',
+        'pet_name',
         'species',
         'breed',
         'gender',

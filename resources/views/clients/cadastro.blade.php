@@ -8,12 +8,12 @@
         @csrf
         <div class="row" id="">
             <div class="form-group col-lg-3">
-                <label for="name">Nome</label>
-                <input type="text" class="form-control" id="name" name="name" placeholder="Insira o nome">
+                <label for="client_name">Nome</label>
+                <input type="text" class="form-control" id="client_name" name="client_name" placeholder="Insira o nome">
             </div>
             <div class="form-group col-lg-3">
-                <label for="lastname">Sobrenome</label>
-                <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Insira o sobrenome">
+                <label for="client_lastname">Sobrenome</label>
+                <input type="text" class="form-control" id="client_lastname" name="client_lastname" placeholder="Insira o sobrenome">
             </div>
 
             <div class="form-group col-lg-2">

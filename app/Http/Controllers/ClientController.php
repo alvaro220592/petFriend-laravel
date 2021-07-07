@@ -52,15 +52,15 @@ class ClientController extends Controller
 		// cadastrando cliente
 		$street_id = Street::where('street', $request->street)->pluck('id')->first();		
 		$client->firstOrCreate([
-			'name' => $request->name,
-			'lastname' => $request->lastname,
+			'client_name' => $request->client_name,
+			'client_lastname' => $request->client_lastname,
 			'address_num' =>$request->address_num,
 			'street_id' => $street_id
 		]);
 
 		// pegando id do cliente com o nome e sobrenome descritos nos campos pra associar o email
-		$client_id = Client::where('name', $request->name)
-			->where('lastname', $request->lastname)
+		$client_id = Client::where('client_name', $request->client_name)
+			->where('client_lastname', $request->client_lastname)
 			->pluck('id')->first();
 
 		$email->firstOrCreate([

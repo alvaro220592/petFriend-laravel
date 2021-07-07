@@ -8,8 +8,8 @@
         @csrf
         <div class="row" id="">
             <div class="form-group col-lg-2">
-                <label for="name">Nome</label>
-                <input type="text" class="form-control" id="name" name="name" placeholder="Insira o nome">
+                <label for="pet_name">Nome</label>
+                <input type="text" class="form-control" id="pet_name" name="pet_name" placeholder="Insira o nome">
             </div>
             <div class="form-group col-lg-2">
                 <label for="species">Espécie</label>
@@ -36,7 +36,7 @@
                 <select name="tutor" id="" class="form-control">
                     <option value="">Selecione o tutor</option>
                     @foreach($clients as $client)
-                        <option value="{{$client->id}}">{{$client->name}} {{$client->lastname}}</option>
+                        <option value="{{$client->id}}">{{$client->client_name}} {{$client->client_lastname}}</option>
                     @endforeach
                 </select>
             </div>
