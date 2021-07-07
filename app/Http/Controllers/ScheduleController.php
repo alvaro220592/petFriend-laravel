@@ -27,10 +27,10 @@ class ScheduleController extends Controller
         // $client = new Client;
         // $pet = new Pet;
 
-        $schedule->services = $request->services;
+        $schedule->service = $request->service;
         $schedule->pick_up = $request->pick_up;
         $schedule->dateTime = $request->dateTime;
-
+        $schedule->user_id = 1;
         $schedule->save();
     }
 }

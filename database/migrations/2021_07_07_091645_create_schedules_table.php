@@ -16,7 +16,7 @@ class CreateSchedulesTable extends Migration
         Schema::create('schedules', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->json('services');
+            $table->string('service');
             $table->string('pick_up');
             $table->dateTime('dateTime');
             $table->foreignId('user_id')->constraint()->references('id')->on('users'); 

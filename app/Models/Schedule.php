@@ -18,9 +18,9 @@ class Schedule extends Model
         'pet_id'
     ];
 
-    protected $casts = [
-        'services' => 'array'
-    ];
+    // protected $casts = [
+    //     'service' => 'array'
+    // ];
 
     protected $dates = [
         'date'

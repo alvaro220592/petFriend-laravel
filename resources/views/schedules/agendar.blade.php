@@ -2,68 +2,63 @@
 @section('title', 'Agendamentos')
 @section('content')
 
-<h2 class="" id="">Agendar</h2>
+    <h2 class="" id="">Agendar</h2>
 
-    
-<form action="/pets" method="post">
-    @csrf
-    <div class="row" id="">
-        <div class="form-group col-lg-2">
-            <label for="tutor">Tutor</label>
-            <select name="tutor" id="" class="form-control">
-                <option value="">Selecione o pet</option>
-                @foreach($pets as $pet)
-                    <option value="">{{$pet->name}}</option>
-                @endforeach
-            </select>
-        </div>
-        <div class="form-group col-lg-2">
-            <label for="species">Espécie</label>
-            <input type="text" class="form-control" id="species" name="species" placeholder="Insira a espécie">
-        </div>
+        
+    <form action="/agendar" method="post">
+        @csrf
+        <div class="row justify-content-lg-center" id="">
 
-        <div class="form-group col-lg-3">
-            <label for="breed">Raça/SRD</label>
-            <input type="text" class="form-control" id="breed" name="breed" placeholder="Insira a raça/SRD">
-        </div>
+            <div class="form-group col-lg-3">
+                <label for="tutor">Tutor</label>
+                <select name="tutor" id="" class="form-control">
+                    <option value="">Selecione o tutor</option>
+                    @foreach($clients as $client)
+                        <option value="{{$client->id}}">{{$client->name}} {{$client->lastname}}</option>
+                    @endforeach
+                </select>
+            </div>
 
-        <div class="form-group col-lg-2">
-            <label for="gender">Gênero</label>
-            <select name="gender" id="" class="form-control">
-                <option value="">Selecione</option>                    
-                <option value="macho">Macho</option>
-                <option value="femea">Fêmea</option>
-                
-            </select>
-        </div>
+            <div class="form-group col-lg-2">
+                <label for="pet">Nome do pet</label>
+                <select name="pet" id="" class="form-control">
+                    <option value="">Selecione o pet</option>
+                    @foreach($pets as $pet)
+                        <option value="">{{$pet->name}}</option>
+                    @endforeach
+                </select>
+            </div>
 
-        <div class="form-group col-lg-3">
-            <label for="tutor">Tutor</label>
-            <select name="tutor" id="" class="form-control">
-                <option value="">Selecione o tutor</option>
-                @foreach($clients as $client)
-                    <option value="">{{$client->name}}</option>
-                @endforeach
-            </select>
-        </div>
-    </div>
+            <div class="form-group col-lg-2">
+                <label for="service">Serviço</label>
+                <select name="service" id="" class="form-control">
+                    <option value="">Selecione</option>
+                    {{-- @foreach($pets as $pet) --}}
+                        <option value="{{--$service->name--}}">serviço 1</option>
+                    {{-- @endforeach --}}
+                </select>
+            </div>
 
+            <div class="form-group col-lg-2">
+                <label for="species">Buscar em casa?</label>
+                <select name="tutor" id="" class="form-control">
+                    <option value="">Selecione</option>
+                    <option value="">Sim</option>
+                    <option value="">Não</option>
+                </select>
+            </div>
 
-    <div class="row" id="">           
-        <div class="form-group col-lg-12">
-            <label for="observations">Obsevações</label>
-            <div class="form-floating">
-                <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px" name="observations"></textarea>
-                <label for="floatingTextarea2">Insira as observações(Alérgico a perfume, a um remédio específico, etc.)</label>
+            <div class="form-group col-lg-3">
+                <label for="breed">Quando?</label>
+                <input type="datetime-local" class="form-control" id="breed" name="breed" placeholder="Insira a raça/SRD">
             </div>
         </div>
-    </div>
 
-    <div class="row justify-content-center" id="">
-        <div class="form-group col-lg-6 mt-5 text-center">
-            <input type="submit" class="btn btn-outline-light btn-geral w-50" value="Cadastrar" name="" id="">
+        <div class="row justify-content-center" id="">
+            <div class="form-group col-lg-6 mt-5 text-center">
+                <input type="submit" class="btn btn-outline-light btn-geral w-50" value="Agendar" name="" id="">
+            </div>
         </div>
-    </div>
 
-</form>
+    </form>
 @endsection
