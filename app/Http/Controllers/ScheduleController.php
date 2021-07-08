@@ -54,13 +54,16 @@ class ScheduleController extends Controller
                 ->get();*/
 
         /*Ex3*/
-        $schedules = Schedule::with('Client')
+        $sch = count(Schedule::all());
+        
+        $schedules = Schedule::select()
             ->join('clients', 'schedules.client_id', '=', 'clients.id')
             ->join('emails', 'clients.id', '=' ,'emails.client_id')
             ->join('phones', 'clients.id', '=' ,'phones.client_id')
             ->join('pets', 'schedules.pet_id', '=', 'pets.id')
             ->join('streets', 'clients.street_id', '=' ,'streets.id')
             ->get();
+            // '->take(1)' ou  '$schedules = Schedule::limit(número)' só pega um resultado, então se um cliente tem varios emails, pega 1 só pra mostrar, evitando duplicar agendamentos no inner join
 
         return view('index',[
 			'schedules' => $schedules

@@ -19,22 +19,26 @@
         <p>Data: 22/06/2021 às 15:30</p>
         <hr>
     </div>--}}
-    @foreach($schedules as $schedule)
-        <div class="agendamento">
-            <p><span class="schedule-title">Pet:</span> {{$schedule->pet_name}}</p>
-            <p><span class="schedule-title">Serviço:</span> {{$schedule->service}}</p>
-            <p><span class="schedule-title">Raça:</span> {{$schedule->breed}}</p>
-            <p><span class="schedule-title">Gênero:</span> {{$schedule->gender}}</p>
-            <p><span class="schedule-title">Observações:</span> {{$schedule->observations}}</p>
-            <p><span class="schedule-title">Tutor:</span> {{$schedule->client_name}}</p>
-            <p><span class="schedule-title">Telefone:</span> {{$schedule->phone}}</p>
-            <p><span class="schedule-title">Email:</span> {{$schedule->email}}</p>
-            <p><span class="schedule-title">Endereço:</span> {{$schedule->street}}, {{$schedule->address_num}}</p>
-            <p><span class="schedule-title">Buscar em domicílio:</span> {{$schedule->pick_up}}</p>
-            <p><span class="schedule-title">Data:</span> {{date('d/m/Y - H:i', strtotime($schedule->dateTime))}}</p>
-            <hr>
-        </div>
-    @endforeach
+    @if(count($schedules) > 0)
+        @foreach($schedules as $schedule)
+            <div class="agendamento">
+                <p><span class="schedule-title">Pet:</span> {{$schedule->pet_name}}</p>
+                <p><span class="schedule-title">Serviço:</span> {{$schedule->service}}</p>
+                <p><span class="schedule-title">Raça:</span> {{$schedule->breed}}</p>
+                <p><span class="schedule-title">Gênero:</span> {{$schedule->gender}}</p>
+                <p><span class="schedule-title">Observações:</span> {{$schedule->observations}}</p>
+                <p><span class="schedule-title">Tutor:</span> {{$schedule->client_name}}</p>
+                <p><span class="schedule-title">Telefone:</span> {{$schedule->phone}}</p>
+                <p><span class="schedule-title">Email:</span> {{$schedule->email}}</p>
+                <p><span class="schedule-title">Endereço:</span> {{$schedule->street}}, {{$schedule->address_num}}</p>
+                <p><span class="schedule-title">Buscar em domicílio:</span> {{$schedule->pick_up}}</p>
+                <p><span class="schedule-title">Data:</span> {{date('d/m/Y - H:i', strtotime($schedule->dateTime))}}</p>
+                <hr>
+            </div>
+        @endforeach
+    @else
+        <h3>Não há agendamentos</h3>
+    @endif
     
 </div>
        
