@@ -27,8 +27,8 @@
             <p>Gênero: {{$schedule->gender}}</p>
             <p>Observações: {{$schedule->observations}}</p>
             <p>Tutor: {{$schedule->client_name}}</p>
-            {{--<p>Telefone: {{$schedule->}}</p>
-            <p>Endereço: {{$schedule->}}</p>--}}
+            <p>Telefone: {{$schedule->phone}}</p>
+            <p>Endereço: {{$schedule->email}}</p>
             <p>Buscar em domicílio: {{$schedule->pick_up}}</p>
             <p>Data: {{date('d/m/Y - H:i', strtotime($schedule->dateTime))}}</p>
             <hr>

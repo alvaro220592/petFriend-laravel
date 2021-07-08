@@ -22,15 +22,25 @@ class ScheduleController extends Controller
             'pets.breed',
             'pets.gender',
             'pets.observations',
+            'emails.email',
+            'phones.phone',
 
         ])->join('clients', function($join){
 
-			$join->on('clients.id', '=', 'schedules.client_id');
+			$join->on('schedules.client_id', '=', 'clients.id');
 		
         })->join('pets', function($join){
 
             $join->on('clients.id', '=', 'pets.client_id');
 
+        })->join('emails', function($join){
+
+            $join->on('clients.id', '=', 'emails.client_id');
+
+        })->join('phones', function($join){
+
+            $join->on('clients.id', '=', 'phones.client_id');
+        
         })->get();
 
         return view('index',[
