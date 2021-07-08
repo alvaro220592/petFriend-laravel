@@ -65,8 +65,15 @@ class ScheduleController extends Controller
             ->get();
             // '->take(1)' ou  '$schedules = Schedule::limit(número)' só pega um resultado, então se um cliente tem varios emails, pega 1 só pra mostrar, evitando duplicar agendamentos no inner join
 
-        return view('index',[
-			'schedules' => $schedules
+        /*EX 4 
+
+        $schedules = Schedule::select()->join('emails', 'schedules.client_id', '=', 'emails.client_id')
+        
+        ->get();*/
+
+        return view('index', [
+			'schedules' => $schedules,
+            //'client' => $client,
         ]);
 
     }

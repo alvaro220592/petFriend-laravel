@@ -22,11 +22,11 @@ class Client extends Model
     	return $this->belongsTo(Street::class);
     }
 
-    public function phone(){
+    public function phones(){
         return $this->hasMany(Phone::class);
     }
 
-    public function email(){
+    public function emails(){
         return $this->hasMany(Email::class);
     }
 
