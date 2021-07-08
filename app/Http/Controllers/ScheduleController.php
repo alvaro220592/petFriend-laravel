@@ -54,12 +54,10 @@ class ScheduleController extends Controller
                 ->get();*/
 
         /*Ex3*/
-        $sch = count(Schedule::all());
-        
         $schedules = Schedule::select()
             ->join('clients', 'schedules.client_id', '=', 'clients.id')
-            ->join('emails', 'clients.id', '=' ,'emails.client_id')
             ->join('phones', 'clients.id', '=' ,'phones.client_id')
+            ->join('emails', 'clients.id', '=' ,'emails.client_id')
             ->join('pets', 'schedules.pet_id', '=', 'pets.id')
             ->join('streets', 'clients.street_id', '=' ,'streets.id')
             ->get();
