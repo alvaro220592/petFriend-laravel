@@ -56,7 +56,7 @@ class ScheduleController extends Controller
         /*Ex3*/
         $schedules = Schedule::with('Client')
             ->join('clients', 'schedules.client_id', '=', 'clients.id')
-            ->join('emails', 'schedules.client_id', '=' ,'clients.id')
+            ->join('emails', 'clients.id', '=' ,'emails.client_id')
             ->join('phones', 'clients.id', '=' ,'phones.client_id')
             ->join('pets', 'schedules.pet_id', '=', 'pets.id')
             ->join('streets', 'clients.street_id', '=' ,'streets.id')
