@@ -21,16 +21,17 @@
     </div>--}}
     @foreach($schedules as $schedule)
         <div class="agendamento">
-            <p>Pet: {{$schedule->pet_name}}</p>
-            <p>Serviços: {{$schedule->service}}</p>
-            <p>Raça: {{$schedule->breed}}</p>
-            <p>Gênero: {{$schedule->gender}}</p>
-            <p>Observações: {{$schedule->observations}}</p>
-            <p>Tutor: {{$schedule->client_name}}</p>
-            <p>Telefone: {{$schedule->phone}}</p>
-            <p>Endereço: {{$schedule->email}}</p>
-            <p>Buscar em domicílio: {{$schedule->pick_up}}</p>
-            <p>Data: {{date('d/m/Y - H:i', strtotime($schedule->dateTime))}}</p>
+            <p><span class="schedule-title">Pet:</span> {{$schedule->pet_name}}</p>
+            <p><span class="schedule-title">Serviço:</span> {{$schedule->service}}</p>
+            <p><span class="schedule-title">Raça:</span> {{$schedule->breed}}</p>
+            <p><span class="schedule-title">Gênero:</span> {{$schedule->gender}}</p>
+            <p><span class="schedule-title">Observações:</span> {{$schedule->observations}}</p>
+            <p><span class="schedule-title">Tutor:</span> {{$schedule->client_name}}</p>
+            <p><span class="schedule-title">Telefone:</span> {{$schedule->phone}}</p>
+            <p><span class="schedule-title">Email:</span> {{$schedule->email}}</p>
+            <p><span class="schedule-title">Endereço:</span> {{$schedule->street}}, {{$schedule->address_num}}</p>
+            <p><span class="schedule-title">Buscar em domicílio:</span> {{$schedule->pick_up}}</p>
+            <p><span class="schedule-title">Data:</span> {{date('d/m/Y - H:i', strtotime($schedule->dateTime))}}</p>
             <hr>
         </div>
     @endforeach

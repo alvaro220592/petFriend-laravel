@@ -12,6 +12,7 @@ class ScheduleController extends Controller
 
     public function index() {
 
+        /* EX 1
         $schedules = Schedule::select([
             'schedules.service',
             'schedules.pick_up',
@@ -31,7 +32,7 @@ class ScheduleController extends Controller
 		
         })->join('pets', function($join){
 
-            $join->on('clients.id', '=', 'pets.client_id');
+            $join->on('schedules.client_id', '=', 'pets.client_id');
 
         })->join('emails', function($join){
 
@@ -42,10 +43,29 @@ class ScheduleController extends Controller
             $join->on('clients.id', '=', 'phones.client_id');
         
         })->get();
+        ======================
+        */
+
+                
+        //Ex 2
+        /*$schedules = Schedule::select()
+                ->join('clients', 'schedules.client_id', '=', 'clients.id')
+                ->join('emails', 'clients.id', '=', 'emails.client_id')
+                ->get();*/
+
+        /*Ex3*/
+        $schedules = Schedule::with('Client')
+            ->join('clients', 'schedules.client_id', '=', 'clients.id')
+            ->join('emails', 'schedules.client_id', '=' ,'clients.id')
+            ->join('phones', 'clients.id', '=' ,'phones.client_id')
+            ->join('pets', 'schedules.pet_id', '=', 'pets.id')
+            ->join('streets', 'clients.street_id', '=' ,'streets.id')
+            ->get();
 
         return view('index',[
 			'schedules' => $schedules
         ]);
+
     }
     
     public function agendar(){

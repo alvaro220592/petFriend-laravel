@@ -130,6 +130,11 @@ textarea{
     resize: none;
 }
 
+.schedule-title{
+    font-weight: bold;
+    color: #AA0000;
+}
+
 @media(max-width:486px){
     .link-light{
         color:white;      

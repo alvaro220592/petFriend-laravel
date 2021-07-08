@@ -23,3 +23,7 @@ Passos:
 9 - Agora no navegador dá not found por causa da mudança de configuração das pastas na hora da criação do volume. É necessário criar um link simbólico 'ln -s public html'. Então quando o usuário entrar, o sistema entende que ao invés de procurar a pasta 'html' de antes, vai na 'public' do laravel
 
 ########## Parou no min 40 do tutorial https://www.youtube.com/watch?v=YsA1zmSB-G8
+
+
+Dando erro de consulta de agendamentos quando o cliente tem mais de 1 email. Query:
+select SH.dateTime, C.client_name, E.email, P.phone, PE.pet_name, S.street from clients C inner join emails E on C.id = E.client_id inner join phones P on C.id = P.client_id inner join pets PE on C.id = PE.client_id inner join streets S on S.id = C.street_id inner join schedules SH on SH.client_id = C.id where PE.pet_name = 'flip';
