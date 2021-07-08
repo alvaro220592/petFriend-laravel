@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Models\Schedule;
 use App\Models\Pet;
 use App\Models\Client;
+use App\Models\Email;
+use App\Models\Phone;
 
 class ScheduleController extends Controller
 {
@@ -53,7 +55,7 @@ class ScheduleController extends Controller
                 ->join('emails', 'clients.id', '=', 'emails.client_id')
                 ->get();*/
 
-        /*Ex3*/
+        /*Ex3
         $schedules = Schedule::select()
             ->join('clients', 'schedules.client_id', '=', 'clients.id')
             ->join('phones', 'clients.id', '=' ,'phones.client_id')
@@ -61,17 +63,36 @@ class ScheduleController extends Controller
             ->join('pets', 'schedules.pet_id', '=', 'pets.id')
             ->join('streets', 'clients.street_id', '=' ,'streets.id')
             ->get();
-            // '->take(1)' ou  '$schedules = Schedule::limit(número)' só pega um resultado, então se um cliente tem varios emails, pega 1 só pra mostrar, evitando duplicar agendamentos no inner join
+            // '->take(1)' ou  '$schedules = Schedule::limit(número)' só pega um resultado, então se um cliente tem varios emails, pega 1 só pra mostrar, evitando duplicar agendamentos no inner join*/
 
-        /*EX 4 
+        /*EX 4 */
 
-        $schedules = Schedule::select()->join('emails', 'schedules.client_id', '=', 'emails.client_id')
-        
-        ->get();*/
+        $schedules = Schedule::select()
+            ->join('clients', 'schedules.client_id', '=', 'clients.id')        
+            ->get();
+
+        $pets = Schedule::select()
+            ->join('pets', 'pets.id', '=', 'schedules.pet_id')
+            ->get();
+
+        /*$clients = Client::select()
+            ->join('emails', 'emails.client_id', '=', 'clients.id')
+            ->get();*/
+
+        $emails = Email::select()
+            ->join('clients', 'clients.id', '=', 'emails.client_id')
+            ->get();
+
+        $phones = phone::select()
+            ->join('clients', 'clients.id', '=', 'phones.client_id')
+            ->get();
 
         return view('index', [
 			'schedules' => $schedules,
-            //'client' => $client,
+            'pets' => $pets,
+            //'clients' => $clients,
+            'emails' => $emails,
+            'phones' => $phones,
         ]);
 
     }
