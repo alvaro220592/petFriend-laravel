@@ -37,54 +37,44 @@
             </div>
         @endforeach--}}
 
-        @foreach($pets as $pet)
+        @foreach($schedules as $schedule)
             <div class="agendamento">
-                <p><span class="schedule-title">Pet:</span> {{$pet->pet_name}}</p>
+                <p><span class="schedule-title">Pet:</span> {{$schedule->pet_name}}</p>
 
-                <p><span class="schedule-title">Serviço:</span> {{$pet->service}}</p>
+                <p><span class="schedule-title">Serviço:</span> {{$schedule->service}}</p>
 
-                <p><span class="schedule-title">Raça:</span> {{$pet->breed}}</p>
+                <p><span class="schedule-title">Raça:</span> {{$schedule->breed}}</p>
                 
-                <p><span class="schedule-title">Gênero:</span> {{$pet->gender}}</p>
+                <p><span class="schedule-title">Gênero:</span> {{$schedule->gender}}</p>
 
-                <p><span class="schedule-title">Observações:</span> {{$pet->observations}}</p>
-        @endforeach
-
-            @foreach($schedules as $schedule)
+                <p><span class="schedule-title">Observações:</span> {{$schedule->observations}}</p>
+        
                 <p><span class="schedule-title">Tutor:</span> {{$schedule->client_name}} {{$schedule->client_lastname}}</p>
 
                 <p><span class="schedule-title">Endereço:</span> 
-                    @foreach($streets as $street)
-                        Rua/Avenida {{$street->street}}, 
-                        nº {{$schedule->address_num}},
-                        CEP: {{$street->zipcode}}
-                    @endforeach
-
-                    
-
-                    @foreach($states as $state)
-                        {{$state->city}} - {{$state->initials}}
-                    @endforeach
+                    Rua/Avenida {{$schedule->street}}, 
+                    nº {{$schedule->address_num}},
+                    CEP: {{$schedule->zipcode}},
+                    {{$schedule->city}} - {{$schedule->initials}}
                 </p>
-                
+
                 <p><span class="schedule-title">Buscar em domicílio:</span> {{$schedule->pick_up}}</p>
 
                 <p><span class="schedule-title">Data:</span> {{date('d/m/Y - H:i', strtotime($schedule->dateTime))}}</p>
-            @endforeach
-                
+
                 <p><span class="schedule-title">Email:</span> 
-                    @foreach($emails as $email)
-                        {{$email->email}} /
-                    @endforeach
+                        {{$schedule->email}}
                 </p>
                 
                 <p><span class="schedule-title">Telefone:</span>
-                    @foreach($phones as $phone)
-                        {{$phone->phone}} /
-                    @endforeach
+                        {{$schedule->phone}}
                 </p>
                 
                 <hr>
+        @endforeach
+                
+                               
+                
             </div>
 
     @else

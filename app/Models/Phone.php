@@ -13,4 +13,8 @@ class Phone extends Model
         'phone',
         'client_id'
     ];
+
+    public function client(){
+    	return $this->belongsTo(Client::class);
+    }
 }

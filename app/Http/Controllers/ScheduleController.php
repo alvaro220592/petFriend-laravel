@@ -72,40 +72,16 @@ class ScheduleController extends Controller
 
         $schedules = Schedule::select()
             ->join('clients', 'schedules.client_id', '=', 'clients.id')        
-            ->get();
-
-        $pets = Schedule::select()
             ->join('pets', 'pets.id', '=', 'schedules.pet_id')
-            ->get();
-
-        /*$clients = Client::select()
-            ->join('emails', 'emails.client_id', '=', 'clients.id')
-            ->get();*/
-
-        $emails = Email::select()
-            ->join('clients', 'clients.id', '=', 'emails.client_id')
-            ->get();
-
-        $phones = phone::select()
-            ->join('clients', 'clients.id', '=', 'phones.client_id')
-            ->get();
-
-        $streets = Street::select()
-            ->join('clients', 'clients.street_id', '=', 'streets.id')
-            ->get();
-
-        $states = State::select()
-            ->join('cities', 'cities.state_id', '=', 'states.id')
+            ->join('streets', 'clients.street_id', '=', 'streets.id')
+            ->join('cities', 'streets.city_id', '=', 'cities.id')
+            ->join('states', 'cities.state_id', '=', 'states.id')
+            ->join('emails', 'clients.id', '=', 'emails.client_id')
+            ->join('phones', 'clients.id', '=', 'phones.client_id')
             ->get();
 
         return view('index', [
 			'schedules' => $schedules,
-            'pets' => $pets,
-            'streets' => $streets,
-            'emails' => $emails,
-            'phones' => $phones,
-            'streets' => $streets,
-            'states' => $states,
         ]);
 
     }
