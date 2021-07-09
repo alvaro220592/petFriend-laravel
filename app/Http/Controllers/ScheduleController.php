@@ -8,6 +8,9 @@ use App\Models\Pet;
 use App\Models\Client;
 use App\Models\Email;
 use App\Models\Phone;
+use App\Models\Street;
+use App\Models\City;
+use App\Models\State;
 
 class ScheduleController extends Controller
 {
@@ -87,12 +90,22 @@ class ScheduleController extends Controller
             ->join('clients', 'clients.id', '=', 'phones.client_id')
             ->get();
 
+        $streets = Street::select()
+            ->join('clients', 'clients.street_id', '=', 'streets.id')
+            ->get();
+
+        $states = State::select()
+            ->join('cities', 'cities.state_id', '=', 'states.id')
+            ->get();
+
         return view('index', [
 			'schedules' => $schedules,
             'pets' => $pets,
-            //'clients' => $clients,
+            'streets' => $streets,
             'emails' => $emails,
             'phones' => $phones,
+            'streets' => $streets,
+            'states' => $states,
         ]);
 
     }
