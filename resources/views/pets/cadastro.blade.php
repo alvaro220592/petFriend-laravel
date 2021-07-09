@@ -22,8 +22,8 @@
             </div>
 
             <div class="form-group col-lg-2">
-                <label for="gender">Gênero</label>
-                <select name="gender" id="" class="form-control">
+                <label for="sex">Sexo</label>
+                <select name="sex" id="" class="form-control">
                     <option value="">Selecione</option>                    
                     <option value="macho">Macho</option>
                     <option value="femea">Fêmea</option>

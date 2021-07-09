@@ -19,7 +19,7 @@ class CreatePetsTable extends Migration
             $table->string('pet_name');
             $table->string('species');
             $table->string('breed');
-            $table->string('gender');
+            $table->string('sex');
             $table->text('observations');
             $table->foreignId('client_id')->constraint()->references('id')->on('clients')->onDelete('cascade');
         });

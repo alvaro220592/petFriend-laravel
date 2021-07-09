@@ -45,7 +45,7 @@
 
                 <p><span class="schedule-title">Raça:</span> {{$schedule->breed}}</p>
                 
-                <p><span class="schedule-title">Gênero:</span> {{$schedule->gender}}</p>
+                <p><span class="schedule-title">Sexo:</span> {{$schedule->sex}}</p>
 
                 <p><span class="schedule-title">Observações:</span> {{$schedule->observations}}</p>
         

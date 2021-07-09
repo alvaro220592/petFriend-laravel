@@ -27,7 +27,7 @@ class PetController extends Controller
         $pet->pet_name = $request->pet_name;
         $pet->species = $request->species;
         $pet->breed = $request->breed;
-        $pet->gender = $request->gender;
+        $pet->sex = $request->sex;
         $pet->observations = $request->observations;
         $pet->client_id = $request->tutor;
 
