@@ -82,6 +82,7 @@ class ScheduleController extends Controller
             ->join('emails', 'clients.id', '=', 'emails.client_id')
             ->join('phones', 'clients.id', '=', 'phones.client_id')
             ->where('pets.pet_name', 'like', "%$search%")
+            ->orWhere('clients.client_name', 'like', "%$search%")
             ->get();
 
         }else{

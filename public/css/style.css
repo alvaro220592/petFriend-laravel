@@ -137,6 +137,15 @@ textarea{
     color: #AA0000;
 }
 
+.msg{
+    margin-top: 10px;
+}
+
+.link-msg{
+    color: #AA0000;
+    text-decoration: none;
+}
+
 @media(max-width:486px){
 
    

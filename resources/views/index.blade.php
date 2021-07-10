@@ -19,7 +19,27 @@
         <p>Data: 22/06/2021 às 15:30</p>
         <hr>
     </div>--}}
-    @if(count($schedules) > 0)
+
+    @if(count($schedules) == 0 && $search)
+        <div class="msg">
+            <h3>Sem resultados ao buscar por "{{$search}}".
+                <a href="/" class="link-msg">Ver todos</a>
+            </h3>
+        </div>
+
+    @elseif(count($schedules) == 0)
+        <div class="msg">
+            <h3>Não há agendamentos</h3>
+        </div>
+
+    @elseif($search)
+
+        <div class="msg">
+            <h3>Mostrando resultados ao buscar por "{{$search}}".
+                <a href="/" class="link-msg">Ver todos</a>
+            </h3>
+        </div>
+    @endif
 
         @foreach($schedules as $schedule)
             <div class="agendamento">
@@ -78,11 +98,6 @@
                                
                 
             </div>
-
-    @else
-        <h3>Não há agendamentos</h3>
-    @endif
-    
 </div>
        
 @endsection
