@@ -70,7 +70,7 @@ class ScheduleController extends Controller
 
         /*EX 4 */
 
-        $schedules = Schedule::select()
+        $schedules = Schedule::orderBy('schedules.dateTime')
             ->join('clients', 'schedules.client_id', '=', 'clients.id')        
             ->join('pets', 'pets.id', '=', 'schedules.pet_id')
             ->join('streets', 'clients.street_id', '=', 'streets.id')

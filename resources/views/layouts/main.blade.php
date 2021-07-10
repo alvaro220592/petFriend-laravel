@@ -67,8 +67,8 @@
                           Cadastros
                         </a>
                         <ul class="dropdown-menu fs-5" aria-labelledby="navbarDropdown">
-                          <li><a class="dropdown-item" href="{{url('clients/cadastro')}}">Clientes</a></li>
-                          <li><a class="dropdown-item" href="{{url('/pets/cadastro')}}">Pets</a></li>
+                          <li><a class="dropdown-item" href="{{url('clients/cadastro')}}"><ion-icon name="person"></ion-icon> Clientes</a></li>
+                          <li><a class="dropdown-item" href="{{url('/pets/cadastro')}}"><ion-icon name="paw"></ion-icon> Pets</a></li>
                           <li><hr class="dropdown-divider"></li>
                           <li><a class="dropdown-item" href="#">Usuários</a></li>
                         </ul>

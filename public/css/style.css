@@ -74,6 +74,8 @@ h2 {
     margin-top: 150px;
     font-size: 35px;
     text-align: center;
+    font-weight: bold;
+    margin-bottom: 20px;
 }
 
 .container{
@@ -130,7 +132,7 @@ textarea{
     resize: none;
 }
 
-.schedule-title{
+.schedule-title, .icon{
     font-weight: bold;
     color: #AA0000;
 }
