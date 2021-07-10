@@ -70,7 +70,23 @@ class ScheduleController extends Controller
 
         /*EX 4 */
 
+        $search = request('search');
+
+        if($search){
         $schedules = Schedule::orderBy('schedules.dateTime')
+            ->join('clients', 'schedules.client_id', '=', 'clients.id')        
+            ->join('pets', 'pets.id', '=', 'schedules.pet_id')
+            ->join('streets', 'clients.street_id', '=', 'streets.id')
+            ->join('cities', 'streets.city_id', '=', 'cities.id')
+            ->join('states', 'cities.state_id', '=', 'states.id')
+            ->join('emails', 'clients.id', '=', 'emails.client_id')
+            ->join('phones', 'clients.id', '=', 'phones.client_id')
+            ->where('pets.pet_name', 'like', "%$search%")
+            ->get();
+
+        }else{
+
+            $schedules = Schedule::orderBy('schedules.dateTime')
             ->join('clients', 'schedules.client_id', '=', 'clients.id')        
             ->join('pets', 'pets.id', '=', 'schedules.pet_id')
             ->join('streets', 'clients.street_id', '=', 'streets.id')
@@ -80,8 +96,11 @@ class ScheduleController extends Controller
             ->join('phones', 'clients.id', '=', 'phones.client_id')
             ->get();
 
+        }
+
         return view('index', [
 			'schedules' => $schedules,
+            'search' => $search,
         ]);
 
     }

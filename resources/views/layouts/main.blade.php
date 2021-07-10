@@ -75,7 +75,7 @@
                       </li>
                     </ul>
                     <form class="d-flex">
-                        <input class="form-control me-2 fs-5" type="search" placeholder="Procurar" aria-label="Search">
+                        <input class="form-control me-2 fs-5" name="search" type="search" placeholder="Procurar" aria-label="Search">
                         <button class="btn btn-outline-light btn-geral" type="submit">
                             <ion-icon name="search" class="fs-3 mt-2" id="lupa"></ion-icon>
                         </button>
