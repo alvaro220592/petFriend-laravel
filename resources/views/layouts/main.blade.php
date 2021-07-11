@@ -44,7 +44,7 @@
 
                     <a class="navbar-brand" href="#">
                         <h1 id="logo-title">PetFriend<ion-icon name="paw" class="fs-4 mb-3 mx-1"></ion-icon></h1>
-                        <span id="logo-subtitle" class="fs-5">Para o seu melhor amigo</span>
+                        <span id="logo-subtitle">Para o seu melhor amigo</span>
                     </a>
 
                 {{-- botão collapse --}}
@@ -81,7 +81,7 @@
                         
                           <input class="form-control me-1 fs-5 w-50" name="search" type="search" placeholder="Procurar" aria-label="Search">
 
-                          <select name="buscarPor" id="" class="form-control w-25 me-1">
+                          <select name="buscarPor" id="" class="form-control w-25 me-1 fs-6">
                             <option value="client_name">Tutor</option>
                             <option value="pet_name">Pet</option>
                         </select>

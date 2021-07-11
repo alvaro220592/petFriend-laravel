@@ -164,11 +164,11 @@ textarea{
     }
 
     #logo-subtitle {
-        font-size: 10px;
+        font-size: 16px;
         font-weight: bold;
     }
 
     .dropdown-menu{
-        width: 100%;
+        margin: auto;
     }
 }
