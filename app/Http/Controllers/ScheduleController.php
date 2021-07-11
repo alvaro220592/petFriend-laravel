@@ -71,6 +71,7 @@ class ScheduleController extends Controller
         /*EX 4 */
 
         $search = request('search');
+        $buscarPor = request('buscarPor');
 
         if($search){
         $schedules = Schedule::orderBy('schedules.dateTime')
@@ -81,8 +82,7 @@ class ScheduleController extends Controller
             ->join('states', 'cities.state_id', '=', 'states.id')
             ->join('emails', 'clients.id', '=', 'emails.client_id')
             ->join('phones', 'clients.id', '=', 'phones.client_id')
-            ->where('pets.pet_name', 'like', "%$search%")
-            ->orWhere('clients.client_name', 'like', "%$search%")
+            ->where($buscarPor, 'like', "%$search%")
             ->get();
 
         }else{

@@ -74,12 +74,24 @@
                         </ul>
                       </li>
                     </ul>
-                    <form class="d-flex">
-                        <input class="form-control me-2 fs-5" name="search" type="search" placeholder="Procurar" aria-label="Search">
-                        <button class="btn btn-outline-light btn-geral" type="submit">
-                            <ion-icon name="search" class="fs-3 mt-2" id="lupa"></ion-icon>
-                        </button>
-                    </form>
+
+                    @if(Route::is('index'))
+                      <form class="d-flex">
+                        
+                        
+                          <input class="form-control me-1 fs-5 w-50" name="search" type="search" placeholder="Procurar" aria-label="Search">
+
+                          <select name="buscarPor" id="" class="form-control w-25 me-1">
+                            <option value="client_name">Tutor</option>
+                            <option value="pet_name">Pet</option>
+                        </select>
+
+                          <button class="btn btn-outline-light btn-geral" type="submit">
+                              <ion-icon name="search" class="fs-3 mt-2" id="lupa"></ion-icon>
+                          </button>
+                      </form>
+                    @endif
+
                   </div>
                 </div>
               </nav>

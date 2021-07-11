@@ -16,9 +16,9 @@ use App\Http\Controllers\ScheduleController;
 |
 */
 
-Route::get("/", [ScheduleController::class, 'index']);
+Route::get("/", [ScheduleController::class, 'index'])->name('index');
 
-Route::get('/agendar', [ScheduleController::class, 'agendar']);
+Route::get('/agendar', [ScheduleController::class, 'agendar'])->name('agendarView');
 
 Route::get('/clients/cadastro',[ClientController::class, 'cadastro']);
 
