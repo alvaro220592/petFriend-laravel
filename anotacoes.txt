@@ -27,3 +27,5 @@ Passos:
 
 Dando erro de consulta de agendamentos quando o cliente tem mais de 1 email. Query:
 select SH.dateTime, C.client_name, E.email, P.phone, PE.pet_name, S.street from clients C inner join emails E on C.id = E.client_id inner join phones P on C.id = P.client_id inner join pets PE on C.id = PE.client_id inner join streets S on S.id = C.street_id inner join schedules SH on SH.client_id = C.id where PE.pet_name = 'flip';
+
+aaaaaaaaaaaaaa
