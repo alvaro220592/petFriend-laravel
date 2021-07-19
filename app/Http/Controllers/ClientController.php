@@ -12,6 +12,23 @@ use App\Models\Email;
 
 class ClientController extends Controller
 {
+
+	public function index(){
+
+		$clients = Client::orderBy('client_name')
+		->join('streets', 'clients.street_id', '=', 'streets.id')
+		->join('cities', 'streets.city_id', '=', 'cities.id')
+		->join('states', 'cities.state_id', '=', 'states.id')
+		->join('phones', 'clients.id', '=', 'phones.client_id')
+		->join('emails', 'clients.id', '=', 'emails.client_id')
+		->get();
+
+		return view('clients.index',[
+			'clients' => $clients,
+		]);
+
+	}
+
     public function cadastro(){
 
     	return view('clients.cadastro');

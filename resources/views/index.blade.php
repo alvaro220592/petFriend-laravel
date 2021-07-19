@@ -2,7 +2,7 @@
 @section('title', 'PetFriend - Início')
 @section('content')
 
-<h2 class="" id="">Agendamentos</h2>
+<h2 class="" id="">Agendamentos ({{ count($schedules) }})</h2>
 
 <div class="px-3" id="schedule-container">
     

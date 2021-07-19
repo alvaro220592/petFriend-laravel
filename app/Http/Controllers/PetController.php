@@ -9,7 +9,14 @@ use App\Models\Pet;
 class PetController extends Controller
 {
     public function index() {
-        //return view('index');
+        
+        $pets = Pet::OrderBy('pet_name')
+        ->join('clients', 'pets.client_id', '=', 'clients.id')
+        ->get();
+
+        return view('pets.index',[
+            'pets' => $pets,
+        ]);
     }
 
     public function cadastro(){

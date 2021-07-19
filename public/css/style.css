@@ -87,6 +87,13 @@ h2 {
     background: rgba(255, 255, 255, 0.5);
 }
 
+#table-container{
+    height: 60vh;
+    overflow-y:scroll;
+    overflow-x:scroll;
+    background: rgba(255, 255, 255, 0.5);
+}
+
 .agendamento{
     margin: 20px auto;
 }
@@ -141,9 +148,28 @@ textarea{
     margin-top: 10px;
 }
 
-.link-msg{
+.link-msg, .add-icon{
     color: #AA0000;
     text-decoration: none;
+}
+
+.table{
+    background: rgba(255, 255, 255, 0.5);
+    font-weight: bold;
+}
+
+thead{
+    background: #AA0000;
+    color: white;
+}
+
+a{
+    text-decoration: none;
+}
+
+.action-icon{
+    font-size: 30px;
+    margin-left:20px;
 }
 
 @media(max-width:486px){

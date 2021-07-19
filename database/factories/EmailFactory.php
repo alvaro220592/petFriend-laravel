@@ -4,6 +4,8 @@ namespace Database\Factories;
 
 use App\Models\Email;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Str;
+use App\Models\Client;
 
 class EmailFactory extends Factory
 {
@@ -12,7 +14,7 @@ class EmailFactory extends Factory
      *
      * @var string
      */
-    protected $model = Email::class;
+    protected $model = \App\Models\Email::class;
 
     /**
      * Define the model's default state.
@@ -22,7 +24,8 @@ class EmailFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'email' => $this->faker->freeEmail(),
+            'client_id' => rand(1, count(Client::all())),
         ];
     }
 }

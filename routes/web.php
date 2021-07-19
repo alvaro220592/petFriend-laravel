@@ -20,13 +20,17 @@ Route::get("/", [ScheduleController::class, 'index'])->name('index')->middleware
 
 Route::get('/agendar', [ScheduleController::class, 'agendar'])->name('agendarView');
 
-Route::get('/clients/cadastro',[ClientController::class, 'cadastro']);
+Route::get('/clients/cadastro',[ClientController::class, 'cadastro'])->name('/clients/cadastro');
 
 Route::post('/clients', [ClientController::class, 'store']);
+
+Route::get('/clients', [ClientController::class, 'index'])->name('/clients/get');
 
 Route::get('/pets/cadastro', [PetController::class, 'cadastro']);
 
 Route::post('/pets', [PetController::class, 'store']);
+
+Route::get('/pets', [PetController::class, 'index'])->name('/pets/get');
 
 Route::post('/agendar', [ScheduleController::class, 'store']);
 
