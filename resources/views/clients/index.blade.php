@@ -36,7 +36,7 @@
                         <td>{{ $client->phone }}</td>
                         <td>{{ $client->email }}</td>
                         <td>{{ $client->street }}, 
-                            {{ $client->address_num }},
+                            {{ $client->address_num }}
                         </td>
                         <td>{{ $client->city }}</td>
                         <td>{{ $client->initials }}</td>
