@@ -16,7 +16,7 @@ use App\Http\Controllers\ScheduleController;
 |
 */
 
-Route::get("/", [ScheduleController::class, 'index'])->name('index');
+Route::get("/", [ScheduleController::class, 'index'])->name('index')->middleware('auth');
 
 Route::get('/agendar', [ScheduleController::class, 'agendar'])->name('agendarView');
 
@@ -29,6 +29,7 @@ Route::get('/pets/cadastro', [PetController::class, 'cadastro']);
 Route::post('/pets', [PetController::class, 'store']);
 
 Route::post('/agendar', [ScheduleController::class, 'store']);
+
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');

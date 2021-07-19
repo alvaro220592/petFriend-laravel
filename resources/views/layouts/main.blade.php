@@ -62,6 +62,16 @@
                       <li class="nav-item">
                         <a class="link-light align-middle" href="{{url('agendar')}}">Agendar</a>
                       </li>
+
+                      {{-- @guest
+                        <li class="nav-item">
+                          <a class="link-light align-middle" href="{{url('login')}}">Logar</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="link-light align-middle" href="{{url('Register')}}">Registrar</a>
+                        </li>
+                      @endguest --}}
+                      
                       <li class="nav-item dropdown">
                         <a class="link-light align-middle dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                           Cadastros
@@ -69,10 +79,18 @@
                         <ul class="dropdown-menu fs-5" aria-labelledby="navbarDropdown">
                           <li><a class="dropdown-item" href="{{url('clients/cadastro')}}"><ion-icon name="person"></ion-icon> Clientes</a></li>
                           <li><a class="dropdown-item" href="{{url('/pets/cadastro')}}"><ion-icon name="paw"></ion-icon> Pets</a></li>
-                          <li><hr class="dropdown-divider"></li>
-                          <li><a class="dropdown-item" href="#">Usuários</a></li>
+                          {{-- <li><hr class="dropdown-divider"></li>
+                          <li><a class="dropdown-item" href="{{ url('/register') }}">Usuários</a></li> --}}
                         </ul>
                       </li>
+                      @auth
+                      <li class="nav-item">
+                        <form action="/logout" method="post">
+                          @csrf
+                          <a class="link-light align-middle" href="/logout" onclick="event.preventDefault(); this.closest('form').submit();">Sair</a>
+                        </form>
+                      </li>
+                      @endauth
                     </ul>
 
                     @if(Route::is('index'))

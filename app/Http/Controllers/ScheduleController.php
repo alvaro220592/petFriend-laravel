@@ -130,6 +130,9 @@ class ScheduleController extends Controller
         $schedule->client_id = $request->tutor;
         $schedule->pet_id = $request->pet;
         
+        $user = auth()->user();
+        $schedule->user_id = $user->id;
+        
         $schedule->save();
 
         return redirect('/');
