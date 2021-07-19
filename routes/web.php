@@ -29,3 +29,6 @@ Route::get('/pets/cadastro', [PetController::class, 'cadastro']);
 Route::post('/pets', [PetController::class, 'store']);
 
 Route::post('/agendar', [ScheduleController::class, 'store']);
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+    return view('dashboard');
+})->name('dashboard');
