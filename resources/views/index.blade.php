@@ -91,6 +91,11 @@
                     <span class="schedule-title">Telefone:</span>
                         {{$schedule->phone}}
                 </p>
+
+                <p><ion-icon name="person-circle" class="icon"></ion-icon>
+                    <span class="schedule-title">Usuário cad.:</span>
+                        {{$schedule->user_id}}
+                </p>
                 
                 <hr>
         @endforeach
