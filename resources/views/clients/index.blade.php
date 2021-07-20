@@ -17,7 +17,6 @@
                 <tr>
                     <th>ID</th>
                     <th>Nome</th>
-                    <th>Sobrenome</th>
                     <th>Telefone</th>
                     <th>Email</th>
                     <th>Endereço</th>
@@ -31,8 +30,10 @@
                 @foreach($clients as $client)
                     <tr>
                         <td>{{ $client->id }}</td>
-                        <td>{{ $client->client_name }}</td>
-                        <td>{{ $client->client_lastname }}</td>
+                        <td>
+                            {{ $client->client_name }}
+                            {{ $client->client_lastname }}
+                        </td>
                         <td>{{ $client->phone }}</td>
                         <td>{{ $client->email }}</td>
                         <td>{{ $client->street }}, 
