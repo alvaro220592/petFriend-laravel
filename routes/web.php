@@ -36,6 +36,8 @@ Route::post('/agendar', [ScheduleController::class, 'store']);
 
 Route::delete('clients/{id}', [ClientController::class, 'destroy']);
 
+Route::delete('pets/{id}', [PetController::class, 'destroy']);
+
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');

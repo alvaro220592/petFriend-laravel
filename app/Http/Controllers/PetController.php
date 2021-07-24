@@ -10,7 +10,16 @@ class PetController extends Controller
 {
     public function index() {
         
-        $pets = Pet::OrderBy('pet_name')
+        $pets = Pet::select(
+            'pets.id',
+            'pets.pet_name',
+            'pets.species',
+            'pets.breed',
+            'pets.sex',
+            'pets.observations',
+            'clients.client_name',
+            'clients.client_lastname'
+        )
         ->join('clients', 'pets.client_id', '=', 'clients.id')
         ->get();
 
@@ -41,6 +50,14 @@ class PetController extends Controller
         $pet->save();
 
         return redirect('/');
+
+    }
+
+    public function destroy($id){
+
+        $pet = Pet::findOrFail($id)->delete();
+
+        return redirect('/pets');
 
     }
 

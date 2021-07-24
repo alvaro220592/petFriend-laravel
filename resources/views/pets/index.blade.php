@@ -37,7 +37,13 @@
                         <td>{{ $pet->observations }}</td>
                         <td>
                             <ion-icon name="refresh-circle" class="action-icon text-warning"></ion-icon>
-                            <ion-icon name="close-circle" class="action-icon text-danger"></ion-icon>
+                            <form method="post" action="pets/{{ $pet->id }}">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="border-0 bg-transparent">
+                                    <ion-icon name="close-circle" class="action-icon text-danger"></ion-icon>
+                                </button>
+                            </form>
                         </td>
                     </tr>
                 @endforeach
