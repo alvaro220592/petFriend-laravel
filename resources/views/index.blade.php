@@ -4,6 +4,12 @@
 
 <h2 class="" id="">Agendamentos ({{ count($schedules) }})</h2>
 
+<a href="{{ route('agendarView') }}">
+    <h3 class="text-dark">
+    <ion-icon name="add-circle" class="add-icon"></ion-icon>
+        Novo agendamento</h3>
+    </a>
+
 <div class="px-3" id="schedule-container">
     
     {{--<div class="agendamento">

@@ -90,7 +90,14 @@ class ClientController extends Controller
 			'client_id' => $client_id
 		]);
 
-		return redirect('/');
+		return redirect('/clients');
+	}
 
-    }
+	public function destroy($id){
+
+		$client = Client::findOrFail($id)->delete();
+
+		return redirect('/clients')->with('msg', 'Excluído com sucesso');
+
+	}
 }

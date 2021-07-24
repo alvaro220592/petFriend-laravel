@@ -43,8 +43,16 @@
                         <td>{{ $client->initials }}</td>
                         <td>{{ $client->zipcode }}</td>
                         <td>
+
                             <ion-icon name="refresh-circle" class="action-icon text-warning"></ion-icon>
-                            <ion-icon name="close-circle" class="action-icon text-danger"></ion-icon>
+
+                            <form action="clients/{{ $client->id }}" method="post">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="border-0 bg-transparent">
+                                    <ion-icon name="close-circle" class="action-icon text-danger"></ion-icon>
+                                </button>
+                            </form>
                         </td>
                     </tr>
                 @endforeach

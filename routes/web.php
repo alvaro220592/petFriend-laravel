@@ -34,6 +34,8 @@ Route::get('/pets', [PetController::class, 'index'])->name('/pets/get');
 
 Route::post('/agendar', [ScheduleController::class, 'store']);
 
+Route::delete('clients/{id}', [ClientController::class, 'destroy']);
+
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
