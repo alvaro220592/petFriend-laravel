@@ -43,9 +43,12 @@
                         <td>{{ $client->initials }}</td>
                         <td>{{ $client->zipcode }}</td>
                         <td>
+                            {{-- editar --}}
+                            <a href="clients/edit/{{ $client->id }}">
+                                <ion-icon name="refresh-circle" class="action-icon text-warning"></ion-icon>
+                            </a>
 
-                            <ion-icon name="refresh-circle" class="action-icon text-warning"></ion-icon>
-
+                            {{-- excluir --}}
                             <form action="clients/{{ $client->id }}" method="post">
                                 @csrf
                                 @method('DELETE')

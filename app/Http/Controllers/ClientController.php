@@ -100,4 +100,19 @@ class ClientController extends Controller
 		return redirect('/clients')->with('msg', 'Excluído com sucesso');
 
 	}
+
+	public function edit($id){
+		$client = Client::where('clients.id', $id)
+		->join('phones', 'clients.id', '=', 'phones.client_id')
+		->join('emails', 'clients.id', '=', 'emails.client_id')
+		->join('streets', 'clients.street_id', 'streets.id')
+		->join('cities', 'cities.id', 'streets.city_id')
+		->join('states', 'states.id', 'cities.state_id')
+		->get()->first();
+
+		return view('clients.edit', [
+			'client' => $client,
+			//'phone' => $phone,
+		]);
+	}
 }
