@@ -99,22 +99,17 @@ class ScheduleController extends Controller
         //     ->get();
         // }
 
+        
         if($search){
-            $where = '->where($buscarPor, "like", "%$search%")';
-        }else{
-            
-        }
-
-        $schedules = Schedule::orderBy('schedules.dateTime')
+            $schedules = Schedule::orderBy('schedules.dateTime')
                 ->join('clients', 'schedules.client_id', '=', 'clients.id')        
                 ->join('pets', 'pets.id', '=', 'schedules.pet_id')
                 ->join('streets', 'clients.street_id', '=', 'streets.id')
                 ->join('cities', 'streets.city_id', '=', 'cities.id')
                 ->join('states', 'cities.state_id', '=', 'states.id')
                 ->join('emails', 'clients.id', '=', 'emails.client_id')
-                ->join('phones', 'clients.id', '=', 'phones.client_id') .
-                // ->where($buscarPor, 'like', "%$search%")
-                $where
+                ->join('phones', 'clients.id', '=', 'phones.client_id')
+                ->where($buscarPor, 'like', "%$search%")
                 ->select(
                     'pets.pet_name',
                     'pets.breed',
@@ -135,7 +130,37 @@ class ScheduleController extends Controller
                     'schedules.pick_up',
                     'schedules.user_id'
                 )->get();
-
+        }else{
+            $schedules = Schedule::orderBy('schedules.dateTime')
+                ->join('clients', 'schedules.client_id', '=', 'clients.id')        
+                ->join('pets', 'pets.id', '=', 'schedules.pet_id')
+                ->join('streets', 'clients.street_id', '=', 'streets.id')
+                ->join('cities', 'streets.city_id', '=', 'cities.id')
+                ->join('states', 'cities.state_id', '=', 'states.id')
+                ->join('emails', 'clients.id', '=', 'emails.client_id')
+                ->join('phones', 'clients.id', '=', 'phones.client_id')
+                // ->where($buscarPor, 'like', "%$search%")
+                ->select(
+                    'pets.pet_name',
+                    'pets.breed',
+                    'pets.sex',
+                    'pets.observations',
+                    'clients.client_name',
+                    'clients.client_lastname',
+                    'clients.address_num',
+                    'clients.street_id',
+                    'streets.zipcode',
+                    'streets.street',
+                    'cities.city',
+                    'states.initials',
+                    'phones.phone',
+                    'emails.email',
+                    'schedules.dateTime',                    
+                    'schedules.service',
+                    'schedules.pick_up',
+                    'schedules.user_id'
+                )->get();
+        }
         return view('index', [
 			'schedules' => $schedules,
             'search' => $search,
