@@ -38,7 +38,14 @@ Route::delete('clients/{id}', [ClientController::class, 'destroy']);
 
 Route::delete('pets/{id}', [PetController::class, 'destroy']);
 
+// Edição
 Route::get('clients/edit/{id}', [ClientController::class, 'edit']);
+
+// Edição
+Route::get('pets/edit/{id}', [PetController::class, 'edit']);
+
+// Alteração
+Route::put('pets/update/{id}', [PetController::class, 'update']);
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');

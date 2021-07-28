@@ -49,7 +49,7 @@ class PetController extends Controller
 
         $pet->save();
 
-        return redirect('/');
+        return redirect('/pets');
 
     }
 
@@ -59,6 +59,26 @@ class PetController extends Controller
 
         return redirect('/pets');
 
+    }
+
+    public function edit($id){
+        $pet = Pet::where('pets.id', $id)
+        ->join('clients', 'pets.client_id', 'clients.id')
+        ->get()->first();
+
+        $clients = Client::all();
+
+        return view('pets.edit', [
+            'pet' => $pet,
+            'clients' => $clients,
+        ]);
+    }
+
+    public function update(Request $request){
+        $data = $request->all();
+        Pet::findOrFail($request->id)->update($data);
+
+        return redirect('/pets')->with('msg', 'Alterado com sucesso');
     }
 
 }

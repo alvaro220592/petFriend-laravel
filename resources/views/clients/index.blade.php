@@ -5,7 +5,7 @@
     <h2 class="" id="">Clientes Cadastrados ({{ count($clients) }})</h2>
 
     <a href="{{ route('/clients/cadastro') }}">
-        <h3 class="text-dark">
+        <h3 class="novo-cadastro text-dark">
         <ion-icon name="add-circle" class="add-icon"></ion-icon>
         Novo cliente</h3>
     </a>

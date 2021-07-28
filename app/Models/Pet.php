@@ -24,6 +24,8 @@ class Pet extends Model
         'service' => 'array'
     ];
 
+    protected $guarded = [];
+
     public function client(){
         return $this->belongsTo(Client::class);
     }

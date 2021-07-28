@@ -81,14 +81,18 @@ h2 {
 .container{
 }
 
+.novo-cadastro{
+    font-weight: bold;
+}
+
 #schedule-container{
-    height: 60vh;
+    height: 40vh; /* originalmente é 60vh */
     overflow-y:scroll;
     background: rgba(255, 255, 255, 0.5);
 }
 
 #table-container{
-    height: 60vh;
+    height: 40vh; /* originalmente é 60vh */
     overflow-y:scroll;
     overflow-x:scroll;
     background: rgba(255, 255, 255, 0.5);
@@ -113,6 +117,7 @@ th, td{
     font-weight: bold;
 }
 
+/* copyright */
 .copy {
     font-weight: bold;
     font-size: 25px;
@@ -121,7 +126,7 @@ th, td{
     color:white;
 }
 
-
+/* qualquer botãp */
 .btn-geral{
     background-color: #AA0000;
     color: white;

@@ -5,7 +5,7 @@
     <h2 class="" id="">Pets Cadastrados ({{ count($pets) }})</h2>
 
     <a href="{{ url('/pets/cadastro') }}">
-        <h3 class="text-dark">
+        <h3 class="novo-cadastro text-dark">
         <ion-icon name="add-circle" class="add-icon"></ion-icon>
         Novo pet</h3>
     </a>
@@ -36,7 +36,9 @@
                         <td>{{ $pet->client_name }} {{ $pet->client_lastname }}</td>
                         <td>{{ $pet->observations }}</td>
                         <td>
-                            <ion-icon name="refresh-circle" class="action-icon text-warning"></ion-icon>
+                            <a href="pets/edit/{{ $pet->id }}">
+                                <ion-icon name="refresh-circle" class="action-icon text-warning"></ion-icon>
+                            </a>
                             <form method="post" action="pets/{{ $pet->id }}">
                                 @csrf
                                 @method('DELETE')
