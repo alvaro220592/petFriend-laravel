@@ -64,6 +64,16 @@ class PetController extends Controller
     public function edit($id){
         $pet = Pet::where('pets.id', $id)
         ->join('clients', 'pets.client_id', 'clients.id')
+        ->select(
+            'pets.id',
+            'pets.pet_name',
+            'pets.species',
+            'pets.breed',
+            'pets.sex',
+            'pets.observations',
+            'clients.client_name',
+            'clients.client_lastname',
+        )
         ->get()->first();
 
         $clients = Client::all();

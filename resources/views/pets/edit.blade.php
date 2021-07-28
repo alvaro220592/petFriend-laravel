@@ -3,6 +3,7 @@
 @section('content')
 
 	<h2 class="" id="">Editar dados de {{ $pet->pet_name }}</h2>
+    {{ $pet->id }}
 
     <form action="/pets/update/{{ $pet->id }}" method="POST">
         @csrf

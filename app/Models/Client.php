@@ -18,6 +18,8 @@ class Client extends Model
     
     ];
 
+    protected $guarded = [];
+
     public function street(){
     	return $this->belongsTo(Street::class);
     }

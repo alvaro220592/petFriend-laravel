@@ -3,17 +3,18 @@
 @section('content')
 
 	<h2 class="" id="">Editar dados de {{ $client->client_name }}</h2>
-
-    <form action="/clients" method="post">
+    {{ $client->id }}
+    <form action="/clients/update/{{ $client->id }}" method="post">
         @csrf
+        @method('PUT')
         <div class="row" id="">
             <div class="form-group col-lg-3">
                 <label for="client_name">Nome</label>
-                <input type="text" class="form-control" id="client_name" name="client_name" placeholder="Insira o nome" value="{{ $client->client_name }}">
+                <input type="text" class="form-control" id="client_name" name="client_name" placeholder="Insira o nome" onclick="{{ $client->client_name }}" value="{{ $client->client_name}}">
             </div>
             <div class="form-group col-lg-3">
                 <label for="client_lastname">Sobrenome</label>
-                <input type="text" class="form-control" id="client_lastname" name="client_lastname" placeholder="Insira o sobrenome" value="{{ $client->client_lastname }}">
+                <input type="text" class="form-control" id="client_lastname" name="client_lastname" placeholder="Insira o sobrenome" onclick="{{ $client->client_lastname }}" value="{{ $client->client_lastname }}">
             </div>
 
             <div class="form-group col-lg-2">

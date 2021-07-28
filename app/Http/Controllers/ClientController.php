@@ -108,11 +108,30 @@ class ClientController extends Controller
 		->join('streets', 'clients.street_id', 'streets.id')
 		->join('cities', 'cities.id', 'streets.city_id')
 		->join('states', 'states.id', 'cities.state_id')
+		->select(
+			'clients.id',
+			'clients.client_name',
+			'clients.client_lastname',
+			'clients.address_num',
+			'phones.phone',
+			'emails.email',
+			'streets.zipcode',
+			'streets.street',
+			'cities.city',
+			'states.initials'
+		)
 		->get()->first();
 
 		return view('clients.edit', [
 			'client' => $client,
 			//'phone' => $phone,
 		]);
+	}
+
+	public function update(Request $request){
+		$data = $request->all();
+		Client::findOrFail($request->id)->update($data);
+
+		return redirect('/clients')->with('msg', 'Alterado com sucesso');
 	}
 }
