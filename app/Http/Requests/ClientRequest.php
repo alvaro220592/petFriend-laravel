@@ -27,7 +27,7 @@ class ClientRequest extends FormRequest
             'client_name' => 'required',
             'client_lastname' => 'required',
             'phone' => 'required',
-            'email' => ['required', 'email'],
+            'email' => ['required', 'email', 'email' => 'unique:emails,email,{$this->id}',],
             'zipcode' => 'required',
             'street' => 'required',
             'address_num' => 'required',

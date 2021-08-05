@@ -61,3 +61,8 @@ Validação de formulários com form request:
 	Uma alteração tambem foi feita no main.blade, q foi a inserção do yield('scripts') logo antes de fechar o body
 
 	Pra manter os valores nos campos, sem sumir, usa-se "value='{{old("client_name")}}'" ou "value='{{ Request::old("client_name") }}'"
+
+	Pra ver se ja tem alguem cadastrado com o dado inserido, tipo um email:
+	public function rules(){
+		'email', 'email' => 'unique:emails,email,{$this->id}',
+	}
