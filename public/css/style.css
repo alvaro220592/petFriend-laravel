@@ -1,10 +1,10 @@
 * {
     /*font-family: 'Amatic SC', sans-serif;
     /*font-family: 'Yomogi', cursive;*/font-family: 'Mali', cursive;
-    font-weight: ;
+    font-weight: bold;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;    
+    box-sizing: border-box;
 }
  
 body{
@@ -187,17 +187,33 @@ a{
     margin-left:20px;
 }
 
-.modal-title{
-    font-weight: bolder;
+.modal-header, .btn-modal{
+    background: #AA0000;
+}
+
+.modal-title, .btn-modal{
+    font-size: 25px;
+    font-weight: bold;
+    color: white;
+}
+
+.btn-modal:hover{
+    background-color: #7c0000;
+    transition: .5s;
 }
 
 .modal-body{
     background: rgba(255, 255, 255, 0.5);
     color: #AA0000;
+    font-size: 20px;
     font-weight: bold;
     margin:0 auto;
     padding: 5px;
     list-style: none;
+}
+
+#initials{
+    text-transform: uppercase !important;
 }
 
 @media(max-width:486px){

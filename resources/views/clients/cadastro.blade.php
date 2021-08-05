@@ -23,16 +23,16 @@
             </div>
             <div class="form-group col-lg-3">
                 <label for="client_lastname">Sobrenome</label>
-                <input type="text" class="form-control" id="client_lastname" name="client_lastname" placeholder="Insira o sobrenome" value="{{ Request::old('client_lastname') }}">
+                <input type="text" class="form-control @error('client_lastname') is-invalid @enderror" id="client_lastname" name="client_lastname" placeholder="Insira o sobrenome" value="{{ Request::old('client_lastname') }}">
             </div>
 
             <div class="form-group col-lg-2">
                 <label for="phone">Telefone</label>
-                <input type="text" class="form-control" id="phone" name="phone" placeholder="Insira o tel" value="{{ Request::old('phone') }}">
+                <input type="text" class="form-control @error('phone') is-invalid @enderror" id="phone" name="phone" placeholder="Insira o tel" value="{{ Request::old('phone') }}">
             </div>
             <div class="form-group col-lg-4">
                 <label for="email">Email</label>
-                <input type="text" class="form-control" id="email" name="email" placeholder="Insira o email" value="{{ Request::old('email') }}">
+                <input type="text" class="form-control @error('email') is-invalid @enderror" id="email" name="email" placeholder="Insira o email" value="{{ Request::old('email') }}">
             </div>
         </div>
 
@@ -40,27 +40,30 @@
         <div class="row" id="">
             <div class="form-group col-lg-2">
                 <label for="zipcode">CEP</label>
-                <input type="text" class="form-control" id="zipcode" name="zipcode" placeholder="Insira o CEP" value="{{ Request::old('zipcode') }}">
+                <input type="text" class="form-control @error('zipcode') is-invalid @enderror" id="zipcode" name="zipcode" placeholder="Insira o CEP" value="{{ Request::old('zipcode') }}">
             </div>
 
             <div class="form-group col-lg-4">
                 <label for="street">Logradouro</label>
-                <input type="text" class="form-control" id="street" name="street" placeholder="Insira o logradouro" value="{{ Request::old('street') }}">
+                <input type="text" class="form-control @error('street') is-invalid @enderror" id="street" name="street" placeholder="Insira o logradouro" value="{{ Request::old('street') }}">
             </div>
 
             <div class="form-group col-lg-1">
                 <label for="address_num">Número</label>
-                <input type="text" class="form-control" id="address_num" name="address_num" placeholder="Nº" value="{{ Request::old('address_num') }}">
+                <input type="text" class="form-control @error('address_num') is-invalid @enderror" id="address_num" name="address_num" placeholder="Nº" value="{{ Request::old('address_num') }}">
             </div>
 
 
             <div class="form-group col-lg-4">
                 <label for="city">Cidade</label>
-                <input type="text" class="form-control" id="city" name="city" placeholder="Insira a cidade" value="{{ Request::old('city') }}">
+                <input type="text" class="form-control @error('city') is-invalid @enderror" id="city" name="city" placeholder="Insira a cidade" value="{{ Request::old('city') }}">
             </div>
             <div class="form-group col-lg-1">
                 <label for="initials">UF</label>
-                <input type="text" class="form-control" id="initials" name="initials" placeholder="UF" value="{{ Request::old('initials') }}">
+                <input type="text" class="form-control @error('initials') is-invalid @enderror" id="initials" name="initials" placeholder="UF" value="{{ Request::old('initials') }}" maxlength="2"
+
+
+                onkeypress="return (event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123) || (event.charCode==32)">
             </div>
 
             <div class="row justify-content-center" id="">
@@ -86,8 +89,7 @@
 
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save changes</button>
+              <button type="button" class="btn btn-secondary btn-modal" data-bs-dismiss="modal">Ok</button>
             </div>
           </div>
         </div>

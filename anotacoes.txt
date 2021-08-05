@@ -66,3 +66,7 @@ Validação de formulários com form request:
 	public function rules(){
 		'email', 'email' => 'unique:emails,email,{$this->id}',
 	}
+
+	RULES - https://laravel.com/docs/master/validation#rule-alpha:
+		after:data - permite a inserção de data superior a definida abaixo
+		'start_date' => 'required|date|after:tomorrow'
