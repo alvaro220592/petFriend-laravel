@@ -1,0 +1,3 @@
+// $(function(){
+//     $('#botaoModal').trigger('click')
+// });

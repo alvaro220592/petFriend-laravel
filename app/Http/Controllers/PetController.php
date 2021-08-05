@@ -73,8 +73,7 @@ class PetController extends Controller
             'pets.observations',
             'clients.client_name',
             'clients.client_lastname',
-        )
-        ->get()->first();
+        )->get()->first();
 
         $clients = Client::all();
 

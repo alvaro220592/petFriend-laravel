@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\ClientRequest;
 use App\Models\State;
 use App\Models\City;
 use App\Models\Street;
@@ -35,7 +36,7 @@ class ClientController extends Controller
 
     }
 
-    public function store(Request $request){
+    public function store(ClientRequest $request){
 
 		$state = new State;
 		$city = new City;

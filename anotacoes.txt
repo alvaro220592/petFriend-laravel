@@ -33,3 +33,27 @@ Pra não dar problema de tamanho em bytes na migrate do jetstream/autenticação
 	Edite o arquivo app\Providers\AppServiceProvider.php
 	Adicione o namespace use Illuminate\Support\Facades\Schema;
 	Dentro do método boot adicione Schema::defaultStringLength(191);
+
+Validação de formulários com form request:
+	php artisan make:request ClientRequest
+
+	o arquivo fica em app/Http/Requests
+	é bom mudar o 'false' pra 'true' na função 'authorize()' pra q se na hora de um cadastro de email por exemplo, o usuario colocar 'lkhfhjdfskg', não mostrar o erro 403 na tela
+
+	importar o request no controller
+	Mudar o "Request" das funções store, update, etc pra o nome do Request criado, no caso "ClientRequest"
+	As regras serão implantadas na função 'rules()'
+
+	Pra testar tirei o 'required' do html do 'client_name' e fiz na rule
+
+	Até o momento se rodar com algum campo errado, só atualiza a página e nao mostra nada
+	Pra aparecerem os erros, entre no arquivo do formulário e faça:
+		@if($errors->any())
+			<ul>
+				@foreach($errors->all() as $error)
+					<li>{{ $error }}</li>
+				@endforeach
+			</ul>
+		@endif
+
+	MUDEI DE IDEIA. O jeito acima apresenta os erros numa div. Segui o exemplo do video https://www.youtube.com/watch?v=eNlxTBNrmME que mostra cada erro embaixo do seu respectivo campo vazio

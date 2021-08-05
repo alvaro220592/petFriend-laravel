@@ -187,6 +187,19 @@ a{
     margin-left:20px;
 }
 
+.modal-title{
+    font-weight: bold;
+}
+
+.modal-body{
+    background: rgba(255, 255, 255, 0.5);
+    color: #AA0000;
+    font-weight: bold;
+    margin:0 auto;
+    padding: 5px;
+    list-style: none;
+}
+
 @media(max-width:486px){
 
    

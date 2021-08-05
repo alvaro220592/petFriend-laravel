@@ -4,12 +4,22 @@
 
 	<h2 class="" id="">Cadastrar cliente</h2>
 
+    @if ($errors->any())
+        @section('scripts')
+            <script type="text/javascript">
+                $(document).ready(function() {
+                    $('#modal').modal('show');
+                })
+            </script>
+        @endsection
+    @endif
+
     <form action="/clients" method="post">
         @csrf
         <div class="row" id="">
             <div class="form-group col-lg-3">
                 <label for="client_name">Nome</label>
-                <input type="text" class="form-control" id="client_name" name="client_name" placeholder="Insira o nome">
+                <input type="text" name="client_name" class="form-control @error('client_name') is-invalid @enderror" id="client_name"  placeholder="Insira o nome">
             </div>
             <div class="form-group col-lg-3">
                 <label for="client_lastname">Sobrenome</label>
@@ -55,10 +65,31 @@
 
             <div class="row justify-content-center" id="">
                 <div class="form-group col-lg-6 mt-5 text-center">
-                    <input type="submit" class="btn btn-outline-light btn-geral w-50" value="Cadastrar" name="" id="">
+                    <input type="submit" class="btn btn-outline-light btn-geral w-50 mb-5" value="Cadastrar" name="" id="btnCadastrar">
                 </div>
             </div>
         </div>
     </form>
 
+    <div class="modal fade" tabindex="-1" id="modal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Atenção</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+
+                @foreach($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
 @endsection
