@@ -59,3 +59,5 @@ Validação de formulários com form request:
 	O alerta de campos vazios foi feito por modal com função javascript. 
 	uma nova section foi colocada pra habilitar a abertura do modal q foi a @section('scripts')
 	Uma alteração tambem foi feita no main.blade, q foi a inserção do yield('scripts') logo antes de fechar o body
+
+	Pra manter os valores nos campos, sem sumir, usa-se "value='{{old("client_name")}}'" ou "value='{{ Request::old("client_name") }}'"

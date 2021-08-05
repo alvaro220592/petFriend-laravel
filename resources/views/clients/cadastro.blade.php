@@ -19,7 +19,7 @@
         <div class="row" id="">
             <div class="form-group col-lg-3">
                 <label for="client_name">Nome</label>
-                <input type="text" name="client_name" class="form-control @error('client_name') is-invalid @enderror" id="client_name"  placeholder="Insira o nome" value="{{ Request::old('client_name') }}">
+                <input type="text" name="client_name" class="form-control @error('client_name') is-invalid @enderror" id="client_name"  placeholder="Insira o nome" value="{{ old('client_name') }}">
             </div>
             <div class="form-group col-lg-3">
                 <label for="client_lastname">Sobrenome</label>

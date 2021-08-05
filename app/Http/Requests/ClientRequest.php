@@ -27,13 +27,12 @@ class ClientRequest extends FormRequest
             'client_name' => 'required',
             'client_lastname' => 'required',
             'phone' => 'required',
-            'email' => 'required',
+            'email' => ['required', 'email'],
             'zipcode' => 'required',
             'street' => 'required',
             'address_num' => 'required',
             'city' => 'required',
-            'initials' => 'required'
-
+            'initials' => 'required',
         ];
     }
 }
