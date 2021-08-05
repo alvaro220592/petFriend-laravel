@@ -79,6 +79,8 @@
           <div class="modal-content">
             <div class="modal-header">
               <h5 class="modal-title">Atenção</h5>
+              &nbsp;
+              <ion-icon name="warning" class="text-light fs-3 align-middle"></ion-icon> 
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">

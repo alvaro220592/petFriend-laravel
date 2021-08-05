@@ -41,15 +41,15 @@ class ClientRequest extends FormRequest
         return $messages = [
 
             // Required
-            'client_name.required' => 'O campo de nome é obrigatório',
-            'client_lastname.required' => 'O campo de sobrenome é obrigatório',
-            'phone.required' => 'O campo de telefone é obrigatório',
-            'email.required' => 'O campo de email é obrigatório',
-            'zipcode.required' => 'O campo de CEP é obrigatório',
-            'street.required' => 'O campo de logradouro é obrigatório',
-            'address_num.required' => 'O campo de nº residencial é obrigatório',
-            'city.required' => 'O campo de cidade é obrigatório',
-            'initials.required' => 'O campo de UF é obrigatório',
+            'client_name.required' => 'O nome é obrigatório',
+            'client_lastname.required' => 'O sobrenome é obrigatório',
+            'phone.required' => 'O telefone é obrigatório',
+            'email.required' => 'O email é obrigatório',
+            'zipcode.required' => 'O CEP é obrigatório',
+            'street.required' => 'O logradouro é obrigatório',
+            'address_num.required' => 'O nº residencial é obrigatório',
+            'city.required' => 'O cidade é obrigatória',
+            'initials.required' => 'A UF é obrigatória',
 
             // Alpha(apenas letras)
             'client_name.alpha' => 'No nome insira apenas letras',
@@ -62,10 +62,10 @@ class ClientRequest extends FormRequest
             'email.email' => 'Insira um email com formato válido',
 
             // Min
-            'initials.min' => 'A UF deve ter no mínimo 2 caracteres',
+            'initials.min' => 'A UF deve 2 caracteres',
 
             // Max
-            'initials.max' => 'A UF deve ter no máximo 2 caracteres',
+            'initials.max' => 'A UF deve ter 2 caracteres',
 
         ];
     }
