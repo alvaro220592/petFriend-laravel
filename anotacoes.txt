@@ -56,4 +56,6 @@ Validação de formulários com form request:
 			</ul>
 		@endif
 
-	MUDEI DE IDEIA. O jeito acima apresenta os erros numa div. Segui o exemplo do video https://www.youtube.com/watch?v=eNlxTBNrmME que mostra cada erro embaixo do seu respectivo campo vazio
+	O alerta de campos vazios foi feito por modal com função javascript. 
+	uma nova section foi colocada pra habilitar a abertura do modal q foi a @section('scripts')
+	Uma alteração tambem foi feita no main.blade, q foi a inserção do yield('scripts') logo antes de fechar o body

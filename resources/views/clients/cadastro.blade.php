@@ -19,20 +19,20 @@
         <div class="row" id="">
             <div class="form-group col-lg-3">
                 <label for="client_name">Nome</label>
-                <input type="text" name="client_name" class="form-control @error('client_name') is-invalid @enderror" id="client_name"  placeholder="Insira o nome">
+                <input type="text" name="client_name" class="form-control @error('client_name') is-invalid @enderror" id="client_name"  placeholder="Insira o nome" value="{{ Request::old('client_name') }}">
             </div>
             <div class="form-group col-lg-3">
                 <label for="client_lastname">Sobrenome</label>
-                <input type="text" class="form-control" id="client_lastname" name="client_lastname" placeholder="Insira o sobrenome">
+                <input type="text" class="form-control" id="client_lastname" name="client_lastname" placeholder="Insira o sobrenome" value="{{ Request::old('client_lastname') }}">
             </div>
 
             <div class="form-group col-lg-2">
                 <label for="phone">Telefone</label>
-                <input type="text" class="form-control" id="phone" name="phone" placeholder="Insira o tel">
+                <input type="text" class="form-control" id="phone" name="phone" placeholder="Insira o tel" value="{{ Request::old('phone') }}">
             </div>
             <div class="form-group col-lg-4">
                 <label for="email">Email</label>
-                <input type="text" class="form-control" id="email" name="email" placeholder="Insira o email">
+                <input type="text" class="form-control" id="email" name="email" placeholder="Insira o email" value="{{ Request::old('email') }}">
             </div>
         </div>
 
@@ -40,27 +40,27 @@
         <div class="row" id="">
             <div class="form-group col-lg-2">
                 <label for="zipcode">CEP</label>
-                <input type="text" class="form-control" id="zipcode" name="zipcode" placeholder="Insira o CEP">
+                <input type="text" class="form-control" id="zipcode" name="zipcode" placeholder="Insira o CEP" value="{{ Request::old('zipcode') }}">
             </div>
 
             <div class="form-group col-lg-4">
                 <label for="street">Logradouro</label>
-                <input type="text" class="form-control" id="street" name="street" placeholder="Insira o logradouro">
+                <input type="text" class="form-control" id="street" name="street" placeholder="Insira o logradouro" value="{{ Request::old('street') }}">
             </div>
 
             <div class="form-group col-lg-1">
                 <label for="address_num">Número</label>
-                <input type="text" class="form-control" id="address_num" name="address_num" placeholder="Nº">
+                <input type="text" class="form-control" id="address_num" name="address_num" placeholder="Nº" value="{{ Request::old('address_num') }}">
             </div>
 
 
             <div class="form-group col-lg-4">
                 <label for="city">Cidade</label>
-                <input type="text" class="form-control" id="city" name="city" placeholder="Insira a cidade">
+                <input type="text" class="form-control" id="city" name="city" placeholder="Insira a cidade" value="{{ Request::old('city') }}">
             </div>
             <div class="form-group col-lg-1">
                 <label for="initials">UF</label>
-                <input type="text" class="form-control" id="initials" name="initials" placeholder="UF">
+                <input type="text" class="form-control" id="initials" name="initials" placeholder="UF" value="{{ Request::old('initials') }}">
             </div>
 
             <div class="row justify-content-center" id="">

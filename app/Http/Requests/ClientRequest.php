@@ -30,7 +30,7 @@ class ClientRequest extends FormRequest
             'email' => 'required',
             'zipcode' => 'required',
             'street' => 'required',
-            'addres_num' => 'required',
+            'address_num' => 'required',
             'city' => 'required',
             'initials' => 'required'
 
