@@ -4,10 +4,11 @@
 
     <h2 class="" id="">Agendar</h2>
         
+    <div class = "schedule-form">
     <form action="/agendar" method="post">
         @csrf
 
-        <div class="row justify-content-center linha" id="">
+        <div class="row justify-content-center" id="">
             <div class="form-group col-lg-4">
                 <label for="tutor">Tutor</label>
                 <select name="tutor" id="tutor" class="form-select">
@@ -17,7 +18,10 @@
                     @endforeach
                 </select>
             </div>
-            <div class="form-group col-lg-3">
+        </div>
+
+        <div class="row justify-content-center" id="">
+            <div class="form-group col-lg-4">
                 <label for="pet" id="pet_label">Nome do pet</label>
                 <select name="pet" id="pet" class="form-select">
                     <option value="">Selecione o pet</option>
@@ -58,4 +62,5 @@
         </div>
 
     </form>
+    </div>
 @endsection

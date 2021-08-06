@@ -147,9 +147,10 @@
 
         <script>
           $(document).ready(function () {
-              $('#pet, #pet_label').hide();
+              $('#pet, #pet_label').hide(); 
               $('#tutor').on('change', function () {
                   $('#pet, #pet_label').show(500);
+                  {{--$('#tutor').animate({width:"50%"})--}}
                   let id = $(this).val();
                   $('#pet').empty();
                   $('#pet').append(`<option value="0" disabled selected>Processando...</option>`);
