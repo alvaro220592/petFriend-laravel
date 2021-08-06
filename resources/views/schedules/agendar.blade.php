@@ -3,12 +3,11 @@
 @section('content')
 
     <h2 class="" id="">Agendar</h2>
-
         
     <form action="/agendar" method="post">
         @csrf
 
-        <div class="row justify-content-md-center" id="">
+        <div class="row justify-content-center linha" id="">
             <div class="form-group col-lg-4">
                 <label for="tutor">Tutor</label>
                 <select name="tutor" id="tutor" class="form-control">
@@ -18,7 +17,6 @@
                     @endforeach
                 </select>
             </div>
-
             <div class="form-group col-lg-3">
                 <label for="pet" id="pet_label">Nome do pet</label>
                 <select name="pet" id="pet" class="form-control">
