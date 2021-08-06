@@ -10,7 +10,7 @@
         <div class="row justify-content-center linha" id="">
             <div class="form-group col-lg-4">
                 <label for="tutor">Tutor</label>
-                <select name="tutor" id="tutor" class="form-control">
+                <select name="tutor" id="tutor" class="form-select">
                     <option value="" selected disabled>Selecione o tutor</option>
                     @foreach($clients as $client)
                         <option value="{{$client->id}}">{{$client->client_name}} {{$client->client_lastname}}</option>
@@ -19,7 +19,7 @@
             </div>
             <div class="form-group col-lg-3">
                 <label for="pet" id="pet_label">Nome do pet</label>
-                <select name="pet" id="pet" class="form-control">
+                <select name="pet" id="pet" class="form-select">
                     <option value="">Selecione o pet</option>
                 </select>
             </div>
@@ -28,7 +28,7 @@
         <div class="row justify-content-md-center" id="">
             <div class="form-group col-lg-2">
                 <label for="service">Serviço</label>
-                <select name="service" id="" class="form-control">
+                <select name="service" id="" class="form-select">
                     <option value="" selected disabled>Selecione</option>
                         <option value="banho">Banho</option>
                         <option value="tosa">Tosa</option>
@@ -38,7 +38,7 @@
 
             <div class="form-group col-lg-2">
                 <label for="species">Buscar em casa?</label>
-                <select name="pick_up" id="" class="form-control">
+                <select name="pick_up" id="" class="form-select">
                     <option value="" selected disabled>Selecione</option>
                     <option value="Sim">Sim</option>
                     <option value="Não">Não</option>

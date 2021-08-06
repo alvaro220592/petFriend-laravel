@@ -33,7 +33,7 @@
 
             <div class="form-group col-lg-3">
                 <label for="tutor">Tutor</label>
-                <select name="tutor" id="" class="form-control">
+                <select name="tutor" id="" class="form-select">
                     <option value="">Selecione o tutor</option>
                     @foreach($clients as $client)
                         <option value="{{$client->id}}">{{$client->client_name}} {{$client->client_lastname}}</option>

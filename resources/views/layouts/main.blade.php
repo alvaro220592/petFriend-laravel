@@ -95,15 +95,15 @@
                       <form class="d-flex">
                         
                         
-                          <input class="form-control me-1 fs-5 w-50" name="search" type="search" placeholder="Procurar" aria-label="Search">
+                          <input class="form-control me-1 fs-5 w-50 search-input" name="search" type="search" placeholder="Procurar" aria-label="Search">
 
-                          <select name="buscarPor" id="" class="form-control w-25 me-1 fs-6">
+                          <select name="buscarPor" id="" class="form-select w-25 me-1 search-select">
                             <option value="client_name">Tutor</option>
                             <option value="pet_name">Pet</option>
                         </select>
 
-                          <button class="btn btn-outline-light btn-geral" type="submit">
-                              <ion-icon name="search" class="fs-3 mt-2" id="lupa"></ion-icon>
+                          <button class="btn btn-outline-light btn-geral lupa" type="submit">
+                              <ion-icon name="search" class="fs-3 " id="lupa"></ion-icon>
                           </button>
                       </form>
                     @endif

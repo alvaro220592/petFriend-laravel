@@ -216,6 +216,16 @@ a{
     text-transform: uppercase !important;
 }
 
+.form-select{
+    height:45px;
+    font-size: 20px;
+}
+
+.search-select, .search-input, .lupa{
+    /* É o filtro dos agendamentos(tutor/pet) */
+    height: 45px;
+}
+
 @media(max-width:486px){
 
    
