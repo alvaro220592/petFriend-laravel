@@ -17,89 +17,10 @@ class ScheduleController extends Controller
 {
 
     public function index() {
-
-        /* EX 1
-        $schedules = Schedule::select([
-            'schedules.service',
-            'schedules.pick_up',
-            'schedules.datetime',
-            'schedules.dateTime',
-            'clients.client_name',
-            'pets.pet_name',
-            'pets.breed',
-            'pets.gender',
-            'pets.observations',
-            'emails.email',
-            'phones.phone',
-
-        ])->join('clients', function($join){
-
-			$join->on('schedules.client_id', '=', 'clients.id');
-		
-        })->join('pets', function($join){
-
-            $join->on('schedules.client_id', '=', 'pets.client_id');
-
-        })->join('emails', function($join){
-
-            $join->on('clients.id', '=', 'emails.client_id');
-
-        })->join('phones', function($join){
-
-            $join->on('clients.id', '=', 'phones.client_id');
         
-        })->get();
-        ======================
-        */
-
-                
-        //Ex 2
-        /*$schedules = Schedule::select()
-                ->join('clients', 'schedules.client_id', '=', 'clients.id')
-                ->join('emails', 'clients.id', '=', 'emails.client_id')
-                ->get();*/
-
-        /*Ex3
-        $schedules = Schedule::select()
-            ->join('clients', 'schedules.client_id', '=', 'clients.id')
-            ->join('phones', 'clients.id', '=' ,'phones.client_id')
-            ->join('emails', 'clients.id', '=' ,'emails.client_id')
-            ->join('pets', 'schedules.pet_id', '=', 'pets.id')
-            ->join('streets', 'clients.street_id', '=' ,'streets.id')
-            ->get();
-            // '->take(1)' ou  '$schedules = Schedule::limit(número)' só pega um resultado, então se um cliente tem varios emails, pega 1 só pra mostrar, evitando duplicar agendamentos no inner join*/
-
-        /*EX 4 */
-
         $search = request('search');
         $buscarPor = request('buscarPor');
-        // ORIGINAL:
-        // if($search){
-        //     $schedules = Schedule::orderBy('schedules.dateTime')
-        //         ->join('clients', 'schedules.client_id', '=', 'clients.id')        
-        //         ->join('pets', 'pets.id', '=', 'schedules.pet_id')
-        //         ->join('streets', 'clients.street_id', '=', 'streets.id')
-        //         ->join('cities', 'streets.city_id', '=', 'cities.id')
-        //         ->join('states', 'cities.state_id', '=', 'states.id')
-        //         ->join('emails', 'clients.id', '=', 'emails.client_id')
-        //         ->join('phones', 'clients.id', '=', 'phones.client_id')
-        //         ->where($buscarPor, 'like', "%$search%")
-        //         ->get();
-
-        // }else{
-
-        //     $schedules = Schedule::orderBy('schedules.dateTime')
-        //     ->join('clients', 'schedules.client_id', '=', 'clients.id')        
-        //     ->join('pets', 'pets.id', '=', 'schedules.pet_id')
-        //     ->join('streets', 'clients.street_id', '=', 'streets.id')
-        //     ->join('cities', 'streets.city_id', '=', 'cities.id')
-        //     ->join('states', 'cities.state_id', '=', 'states.id')
-        //     ->join('emails', 'clients.id', '=', 'emails.client_id')
-        //     ->join('phones', 'clients.id', '=', 'phones.client_id')
-        //     ->get();
-        // }
-
-        
+               
         if($search){
             $schedules = Schedule::orderBy('schedules.dateTime')
                 ->join('clients', 'schedules.client_id', '=', 'clients.id')        
@@ -170,13 +91,17 @@ class ScheduleController extends Controller
     
     public function agendar(){
 
-        $pets = Pet::all();
+        // $pets = Pet::all();
         $clients = Client::all();
 
         return view('schedules.agendar', [
-            'pets' => $pets,
+            // 'pets' => $pets,
             'clients' => $clients
         ]);
+    }
+
+    public function getPets($id){
+        return json_encode(Pet::where('client_id', $id)->get());
     }
 
     public function store(Request $request){

@@ -62,7 +62,7 @@ class ClientRequest extends FormRequest
             'email.email' => 'Insira um email com formato válido',
 
             // Min
-            'initials.min' => 'A UF deve 2 caracteres',
+            'initials.min' => 'A UF deve ter 2 caracteres',
 
             // Max
             'initials.max' => 'A UF deve ter 2 caracteres',

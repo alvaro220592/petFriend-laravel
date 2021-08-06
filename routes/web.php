@@ -20,6 +20,8 @@ Route::get("/", [ScheduleController::class, 'index'])->name('index')->middleware
 
 Route::get('/agendar', [ScheduleController::class, 'agendar'])->name('agendarView');
 
+Route::get('/getPets/{id}', [ScheduleController::class, 'getPets']);
+
 Route::get('/clients/cadastro',[ClientController::class, 'cadastro'])->name('/clients/cadastro');
 
 Route::post('/clients', [ClientController::class, 'store']);

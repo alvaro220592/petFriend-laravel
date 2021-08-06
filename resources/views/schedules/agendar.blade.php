@@ -11,7 +11,7 @@
 
             <div class="form-group col-lg-3">
                 <label for="tutor">Tutor</label>
-                <select name="tutor" id="" class="form-control">
+                <select name="tutor" id="tutor" class="form-control">
                     <option value="">Selecione o tutor</option>
                     @foreach($clients as $client)
                         <option value="{{$client->id}}">{{$client->client_name}} {{$client->client_lastname}}</option>
@@ -20,12 +20,10 @@
             </div>
 
             <div class="form-group col-lg-2">
-                <label for="pet">Nome do pet</label>
-                <select name="pet" id="" class="form-control">
+                <label for="pet" id="pet_label">Nome do pet</label>
+                <select name="pet" id="pet" class="form-control">
                     <option value="">Selecione o pet</option>
-                    @foreach($pets as $pet)
-                        <option value="{{$pet->id}}">{{$pet->pet_name}}</option>
-                    @endforeach
+                    
                 </select>
             </div>
 
