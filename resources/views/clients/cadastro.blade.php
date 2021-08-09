@@ -40,12 +40,12 @@
         <div class="row" id="">
             <div class="form-group col-lg-2">
                 <label for="zipcode">CEP</label>
-                <input type="text" class="form-control @error('zipcode') is-invalid @enderror" id="zipcode" name="zipcode" placeholder="Insira o CEP" value="{{ Request::old('zipcode') }}">
+                <input type="text" class="form-control @error('zipcode') is-invalid @enderror" id="cep" name="zipcode" placeholder="Insira o CEP" value="{{ Request::old('zipcode') }}">
             </div>
 
             <div class="form-group col-lg-4">
                 <label for="street">Logradouro</label>
-                <input type="text" class="form-control @error('street') is-invalid @enderror" id="street" name="street" placeholder="Insira o logradouro" value="{{ Request::old('street') }}">
+                <input type="text" class="form-control @error('street') is-invalid @enderror" id="logradouro" name="street" placeholder="Insira o logradouro" value="{{ Request::old('street') }}">
             </div>
 
             <div class="form-group col-lg-1">
@@ -56,11 +56,11 @@
 
             <div class="form-group col-lg-4">
                 <label for="city">Cidade</label>
-                <input type="text" class="form-control @error('city') is-invalid @enderror" id="city" name="city" placeholder="Insira a cidade" value="{{ Request::old('city') }}">
+                <input type="text" class="form-control @error('city') is-invalid @enderror" id="localidade" name="city" placeholder="Insira a cidade" value="{{ Request::old('city') }}">
             </div>
             <div class="form-group col-lg-1">
                 <label for="initials">UF</label>
-                <input type="text" class="form-control @error('initials') is-invalid @enderror" id="initials" name="initials" placeholder="UF" value="{{ Request::old('initials') }}" maxlength="2"
+                <input type="text" class="form-control @error('initials') is-invalid @enderror" id="uf" name="initials" placeholder="UF" value="{{ Request::old('initials') }}" maxlength="2"
 
 
                 onkeypress="return (event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123) || (event.charCode==32)">

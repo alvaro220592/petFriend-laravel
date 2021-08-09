@@ -1,5 +1,5 @@
 @extends('layouts.main')
-@section('title', 'PetFriend - Início')
+@section('title', 'Início')
 @section('content')
 
 <h2 class="" id="">Agendamentos ({{ count($schedules) }})</h2>

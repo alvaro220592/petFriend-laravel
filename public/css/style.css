@@ -212,17 +212,20 @@ a{
     list-style: none;
 }
 
+/* campo da UF que já lê em maiúsculo */
 #initials{
     text-transform: uppercase !important;
 }
 
+/* Selects */
 .form-select{
     height:45px;
     font-size: 20px;
 }
 
+
+/* Área de busca e filtro(tutor/pet) */
 .search-select, .search-input, .lupa{
-    /* É o filtro dos agendamentos(tutor/pet) */
     height: 45px;
 }
 
