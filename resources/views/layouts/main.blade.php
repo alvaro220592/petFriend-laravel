@@ -93,13 +93,10 @@
 
                     @if(Route::is('index'))
                       <form class="d-flex">
-                        
-                        
-                          <input class="form-control me-1 fs-5 w-50 search-input" name="search" type="search" placeholder="Procurar" aria-label="Search">
-
-                          <select name="buscarPor" id="" class="form-select w-25 me-1 search-select">
-                            <option value="client_name">Tutor</option>
-                            <option value="pet_name">Pet</option>
+                        <input class="form-control me-1 fs-5 w-50 search-input" name="search" type="search" placeholder="Procurar" aria-label="Search">
+                        <select name="buscarPor" id="" class="form-select w-25 me-1 search-select">
+                          <option value="client_name">Tutor</option>
+                          <option value="pet_name">Pet</option>
                         </select>
 
                           <button class="btn btn-outline-light btn-geral lupa" type="submit">
@@ -131,6 +128,8 @@
         <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
         <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
        
+        <script src="http://code.jquery.com/jquery-3.4.1.js"></script>
+
         {{-- JS do Bootstrap --}}
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
 
@@ -142,7 +141,7 @@
 
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
-        <script src="http://code.jquery.com/jquery-3.4.1.js"></script>
+        
 
         <script>
           // $(document).ready(function () {

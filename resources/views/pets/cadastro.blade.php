@@ -4,12 +4,22 @@
 
 	<h2 class="" id="">Cadastrar pet</h2>
 
+    @if ($errors->any())
+        @section('scripts')
+            <script type="text/javascript">
+                $(document).ready(function(){
+                    $('#modal').modal('show');
+                })
+            </script>
+        @endsection
+    @endif
+
     <form action="/pets" method="post">
         @csrf
         <div class="row" id="">
             <div class="form-group col-lg-2">
                 <label for="pet_name">Nome</label>
-                <input type="text" class="form-control" id="pet_name" name="pet_name" placeholder="Insira o nome">
+                <input type="text" class="form-control @error ('pet_name') is-invalid @enderror" id="pet_name" name="pet_name" placeholder="Insira o nome">
             </div>
             <div class="form-group col-lg-2">
                 <label for="species">Espécie</label>
@@ -47,8 +57,7 @@
             <div class="form-group col-lg-12">
                 <label for="observations">Obsevações</label>
                 <div class="form-floating">
-                    <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px" name="observations"></textarea>
-                    <label for="floatingTextarea2">Insira as observações(Alérgico a perfume, a um remédio específico, etc.)</label>
+                    <textarea class="form-control" placeholder="Leave a comment here" id="observations" style="height: 100px" name="observations"></textarea>
                 </div>
             </div>
         </div>
@@ -61,4 +70,26 @@
 
     </form>
 
+    <div class="modal fade" tabindex="-1" id="modal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Atenção</h5>
+              &nbsp;
+              <ion-icon name="warning" class="text-light fs-3 align-middle"></ion-icon> 
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+
+                @foreach($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary btn-modal" data-bs-dismiss="modal">Ok</button>
+            </div>
+          </div>
+        </div>
+      </div>
 @endsection
