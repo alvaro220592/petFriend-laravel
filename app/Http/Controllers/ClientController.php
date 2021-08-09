@@ -45,9 +45,6 @@ class ClientController extends Controller
 		$email = new Email;
 		$phone = new Phone;
 
-		// Validation:
-		
-
 		// Cadastro de estados
 		$state->firstOrCreate([
 			'initials' => $request->initials

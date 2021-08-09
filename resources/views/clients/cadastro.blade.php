@@ -7,9 +7,7 @@
     @if ($errors->any())
         @section('scripts')
             <script type="text/javascript">
-                $(document).ready(function() {
-                    $('#modal').modal('show');
-                })
+                modal()
             </script>
         @endsection
     @endif

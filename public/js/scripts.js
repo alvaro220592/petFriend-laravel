@@ -51,3 +51,9 @@ if(document.querySelector('#cep')){
         .catch(e => console.log('Deu Erro: '+ e,message))
     })
 }
+
+function modal(){
+    $(document).ready(function(){
+        $('#modal').modal('show')
+    })
+}
