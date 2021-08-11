@@ -89,10 +89,10 @@
                         {{$schedule->user_id}}
                 </p>
 
-                <button class="btn encerrar-agendamento my-2" id="finalizar">Finalizar</button>
+                <button class="btn encerrar-agendamento my-2" id="btn-finalizar">Finalizar</button>
 
                 {{-- SELECT DINAMICO - finalizar --}}
-                <div class="row finalizar">
+                <div class="row finalizar" id="finalizar">
                     <div class="col-lg-2">
                         <span class="schedule-title">Origem</span>
                         <select class="form-select">
@@ -109,8 +109,8 @@
 
                     <div class="col-lg-3">
                         <span class="schedule-title">Confirmar?</span><br>
-                        <button class="btn rounded encerrar-agendamento" id="confirmar-sim">Sim</button>
-                        <button class="btn rounded encerrar-agendamento" id="confirmar-nao">Não</button>
+                        <button class="btn rounded encerrar-agendamento" id="btn-confirmar-sim">Sim</button>
+                        <button class="btn rounded encerrar-agendamento" id="btn-confirmar-nao">Não</button>
                     </div>
 
                 </div>
