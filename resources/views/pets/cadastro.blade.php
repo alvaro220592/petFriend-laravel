@@ -19,29 +19,28 @@
                 <label for="pet_name">Nome</label>
                 <input type="text" class="form-control @error ('pet_name') is-invalid @enderror" id="pet_name" name="pet_name" placeholder="Insira o nome">
             </div>
-            <div class="form-group col-lg-2">
+            <div class="form-group col-lg-3">
                 <label for="species">Espécie</label>
-                <input type="text" class="form-control" id="species" name="species" placeholder="Insira a espécie">
+                <input type="text" class="form-control @error ('species') is-invalid @enderror" id="species" name="species" placeholder="Ex: Cão, gato, ave...">
             </div>
 
             <div class="form-group col-lg-3">
                 <label for="breed">Raça/SRD</label>
-                <input type="text" class="form-control" id="breed" name="breed" placeholder="Insira a raça/SRD">
+                <input type="text" class="form-control @error ('breed') is-invalid @enderror" id="breed" name="breed" placeholder="Insira a raça/SRD">
             </div>
 
-            <div class="form-group col-lg-2">
+            <div class="form-group col-lg-1">
                 <label for="sex">Sexo</label>
-                <select name="sex" id="" class="form-control">
+                <select name="sex" id="" class="form-select @error ('sex') is-invalid @enderror">
                     <option value="">Selecione</option>                    
                     <option value="macho">Macho</option>
                     <option value="femea">Fêmea</option>
-                    
                 </select>
             </div>
 
             <div class="form-group col-lg-3">
                 <label for="tutor">Tutor</label>
-                <select name="tutor" id="" class="form-select">
+                <select name="tutor" id="" class="form-select @error ('tutor') is-invalid @enderror">
                     <option value="">Selecione o tutor</option>
                     @foreach($clients as $client)
                         <option value="{{$client->id}}">{{$client->client_name}} {{$client->client_lastname}}</option>
@@ -49,8 +48,7 @@
                 </select>
             </div>
         </div>
-
-
+        
         <div class="row" id="">           
             <div class="form-group col-lg-12">
                 <label for="observations">Obsevações</label>

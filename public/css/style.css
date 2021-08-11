@@ -86,7 +86,7 @@ h2 {
 }
 
 #schedule-container{
-    height: 40vh; /* originalmente é 60vh */
+    height: 50vh; /* originalmente é 60vh */
     overflow-y:scroll;
     background: rgba(255, 255, 255, 0.5);
 }

@@ -72,6 +72,7 @@ class PetController extends Controller
             'pets.breed',
             'pets.sex',
             'pets.observations',
+            'pets.client_id',
             'clients.client_name',
             'clients.client_lastname',
         )->get()->first();
@@ -84,7 +85,7 @@ class PetController extends Controller
         ]);
     }
 
-    public function update(Request $request){
+    public function update(PetRequest $request){
         $data = $request->all();
         Pet::findOrFail($request->id)->update($data);
 
