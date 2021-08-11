@@ -129,7 +129,7 @@ class ClientController extends Controller
 		]);
 	}
 
-	public function update(Request $request){
+	public function update(ClientRequest $request){
 		$data = $request->all();
 		Client::findOrFail($request->id)->update($data);
 

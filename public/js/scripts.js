@@ -1,4 +1,4 @@
-// SELECT DINÂMICO - PRECISOU COLOCAR AQUI EM PRIMEIRO
+// SELECT DINÂMICO AGENDAMENTO - PRECISOU COLOCAR AQUI EM PRIMEIRO
 $(document).ready(function () {
     $('#pet, #pet_label').hide(); 
     $('#tutor').on('change', function () {
@@ -22,6 +22,12 @@ $(document).ready(function () {
         });
     });
 });
+
+
+// BOTÃO DINAMICO - FINALIZAR AGENDAMENTO
+$document.ready(function() {
+
+})
 
 // VIACEP
 const cep = document.querySelector("#cep")
@@ -52,6 +58,7 @@ if(document.querySelector('#cep')){
     })
 }
 
+// abrir modal
 function modal(){
     $(document).ready(function(){
         $('#modal').modal('show')

@@ -33,8 +33,8 @@
                 <label for="sex">Sexo</label>
                 <select name="sex" id="" class="form-select @error ('sex') is-invalid @enderror">
                     <option value="">Selecione</option>                    
-                    <option value="macho">Macho</option>
-                    <option value="femea">Fêmea</option>
+                    <option value="macho">M</option>
+                    <option value="femea">F</option>
                 </select>
             </div>
 
@@ -66,26 +66,6 @@
 
     </form>
 
-    <div class="modal fade" tabindex="-1" id="modal">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title">Atenção</h5>
-              &nbsp;
-              <ion-icon name="warning" class="text-light fs-3 align-middle"></ion-icon> 
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
+    @extends('layouts.modal')
 
-                @foreach($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary btn-modal" data-bs-dismiss="modal">Ok</button>
-            </div>
-          </div>
-        </div>
-      </div>
 @endsection

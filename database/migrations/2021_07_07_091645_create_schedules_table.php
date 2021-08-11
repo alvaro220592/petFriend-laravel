@@ -19,6 +19,7 @@ class CreateSchedulesTable extends Migration
             $table->string('service');
             $table->string('pick_up');
             $table->dateTime('dateTime');
+            $table->string('status')->default('aberto');
             // $table->foreignId('user_id')->constraint()->references('id')->on('users');
             $table->foreignId('client_id')->constraint()->references('id')->on('clients')->onDelete('cascade');
             $table->foreignId('pet_id')->constraint()->references('id')->on('pets')->onDelete('cascade');

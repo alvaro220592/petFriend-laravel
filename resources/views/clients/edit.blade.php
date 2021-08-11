@@ -3,7 +3,15 @@
 @section('content')
 
 	<h2 class="" id="">Editar dados de {{ $client->client_name }}</h2>
-    {{ $client->id }}
+
+    @if($errors->any())
+        @section('scripts')
+            <script type="text/javascript">
+                modal()
+            </script>
+        @endsection
+    @endif
+
     <form action="/clients/update/{{ $client->id }}" method="post">
         @csrf
         @method('PUT')
@@ -61,5 +69,7 @@
             </div>
         </div>
     </form>
+
+    @extends('layouts.modal')
 
 @endsection

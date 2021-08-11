@@ -229,6 +229,14 @@ a{
     height: 45px;
 }
 
+.encerrar-agendamento{
+    background-color: #AA0000;
+    color: white;
+}
+.encerrar-agendamento:hover{
+    color: white;
+}
+
 
 @media(max-width:486px){
 

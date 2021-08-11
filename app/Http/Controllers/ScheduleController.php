@@ -30,6 +30,7 @@ class ScheduleController extends Controller
                 ->join('states', 'cities.state_id', '=', 'states.id')
                 ->join('emails', 'clients.id', '=', 'emails.client_id')
                 ->join('phones', 'clients.id', '=', 'phones.client_id')
+                ->where('schedules.status', 'aberto')
                 ->where($buscarPor, 'like', "%$search%")
                 ->select(
                     'pets.pet_name',
@@ -49,7 +50,8 @@ class ScheduleController extends Controller
                     'schedules.dateTime',                    
                     'schedules.service',
                     'schedules.pick_up',
-                    'schedules.user_id'
+                    'schedules.user_id',
+                    'schedules.status',
                 )->get();
         }else{
             $schedules = Schedule::orderBy('schedules.dateTime')
@@ -60,6 +62,7 @@ class ScheduleController extends Controller
                 ->join('states', 'cities.state_id', '=', 'states.id')
                 ->join('emails', 'clients.id', '=', 'emails.client_id')
                 ->join('phones', 'clients.id', '=', 'phones.client_id')
+                ->where('schedules.status', 'aberto')
                 // ->where($buscarPor, 'like', "%$search%")
                 ->select(
                     'pets.pet_name',
@@ -79,7 +82,8 @@ class ScheduleController extends Controller
                     'schedules.dateTime',                    
                     'schedules.service',
                     'schedules.pick_up',
-                    'schedules.user_id'
+                    'schedules.user_id',
+                    'schedules.status',
                 )->get();
         }
         return view('index', [
@@ -90,16 +94,14 @@ class ScheduleController extends Controller
     }
     
     public function agendar(){
-
-        // $pets = Pet::all();
         $clients = Client::all();
 
         return view('schedules.agendar', [
-            // 'pets' => $pets,
             'clients' => $clients
         ]);
     }
 
+    // função pra pegar os pets do tutor selecionado na hora de agendar
     public function getPets($id){
         return json_encode(Pet::where('client_id', $id)->get());
     }

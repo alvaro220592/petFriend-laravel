@@ -12,20 +12,6 @@
 
 <div class="px-3" id="schedule-container">
     
-    {{--<div class="agendamento">
-        <p>Pet: Flip</p>
-        <p>Serviços: Banho, Tosa</p>
-        <p>Raça: SRD</p>
-        <p>Gênero: Macho</p>
-        <p>Observações: alérgico a perfume. Lavar apenas com shampoo</p>
-        <p>Tutor: Álvaro</p>
-        <p>Telefone: 11953207491</p>
-        <p>Endereço: Rua Assis Valente 309</p>
-        <p>Buscar em domicílio: Não</p>
-        <p>Data: 22/06/2021 às 15:30</p>
-        <hr>
-    </div>--}}
-
     @if(count($schedules) == 0 && $search)
         <div class="msg">
             <h3>Sem resultados ao buscar por "{{$search}}".
@@ -102,13 +88,37 @@
                     <span class="schedule-title">Usuário cad.:</span>
                         {{$schedule->user_id}}
                 </p>
+
+                <button class="btn encerrar-agendamento my-2" id="finalizar">Finalizar</button>
+
+                {{-- SELECT DINAMICO - finalizar --}}
+                <div class="row finalizar">
+                    <div class="col-lg-2">
+                        <span class="schedule-title">Origem</span>
+                        <select class="form-select">
+                            <option selected>Selecione</option>
+                            <option value="1">Finalizado</option>
+                            <option value="2">Canc cliente</option>
+                            <option value="3">Canc atendente</option>
+                        </select>
+                    </div>
+                    <div class="col-lg-5">
+                        <span class="schedule-title">Observações?</span>
+                        <input type="text" name="" id="obs" class="form-control" placeholder="Insira se houver">
+                    </div>
+
+                    <div class="col-lg-3">
+                        <span class="schedule-title">Confirmar?</span><br>
+                        <button class="btn rounded encerrar-agendamento" id="confirmar-sim">Sim</button>
+                        <button class="btn rounded encerrar-agendamento" id="confirmar-nao">Não</button>
+                    </div>
+
+                </div>
                 
                 <hr>
         @endforeach
                 
-                               
-                
-            </div>
+    </div>
 </div>
        
 @endsection

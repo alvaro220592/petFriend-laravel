@@ -40,7 +40,7 @@
             <nav class="navbar navbar-expand-lg fixed-top navbar-light">
                 <div class="container-fluid">
 
-                    <a class="navbar-brand" href="#">
+                    <a class="navbar-brand" href="/">
                         <h1 id="logo-title">PetFriend<ion-icon name="paw" class="fs-4 mb-3 mx-1"></ion-icon></h1>
                         <span id="logo-subtitle">Para o seu melhor amigo</span>
                     </a>
@@ -58,7 +58,7 @@
                         <a class="link-light align-middle" aria-current="page" href="{{url('/')}}">Início</a>
                       </li>
                       <li class="nav-item">
-                        <a class="link-light align-middle" href="{{url('agendar')}}">Agendar</a>
+                        <a class="link-light align-middle" href="{{url('agendar')}}">Agendamento</a>
                       </li>
 
                       {{-- @guest
