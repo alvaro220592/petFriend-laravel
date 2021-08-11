@@ -10,7 +10,7 @@
         Novo agendamento</h3>
     </a>
 
-<div class="px-3" id="schedule-container">
+<div class="px-3" id="schedule-container" >
     
     @if(count($schedules) == 0 && $search)
         <div class="msg">
@@ -88,11 +88,15 @@
                     <span class="schedule-title">Usuário cad.:</span>
                         {{$schedule->user_id}}
                 </p>
+                <p>{{ $schedule->status }}</p>
 
-                <button class="btn encerrar-agendamento my-2" id="btn-finalizar">Finalizar</button>
+                <button class="btn my-2 btn-finalizar" value="{{$schedule->id}}">
+                        Finalizar
+                </button>
+                
 
                 {{-- SELECT DINAMICO - finalizar --}}
-                <div class="row finalizar" id="finalizar">
+                <div class="row finalizar" value="{{$schedule->id}}">
                     <div class="col-lg-2">
                         <span class="schedule-title">Origem</span>
                         <select class="form-select">
@@ -104,13 +108,19 @@
                     </div>
                     <div class="col-lg-5">
                         <span class="schedule-title">Observações?</span>
-                        <input type="text" name="" id="obs" class="form-control" placeholder="Insira se houver">
+                        <input type="text" name="obs" class="form-control obs" placeholder="Insira se houver">
                     </div>
 
                     <div class="col-lg-3">
                         <span class="schedule-title">Confirmar?</span><br>
-                        <button class="btn rounded encerrar-agendamento" id="btn-confirmar-sim">Sim</button>
-                        <button class="btn rounded encerrar-agendamento" id="btn-confirmar-nao">Não</button>
+                        <form action="/schedule/finalizar/{{ $schedule->id }}" method="post" class="form-finalizar">
+                            @csrf
+                            @method('PUT')
+                            <button class="btn rounded btn-confirmar">
+                                Sim
+                            </button>
+                        </form>
+                        <button class="btn rounded btn-confirmar-nao">Não</button>
                     </div>
 
                 </div>

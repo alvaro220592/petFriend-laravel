@@ -25,16 +25,18 @@ $(document).ready(function () {
 
 
 // BOTÃO DINAMICO - FINALIZAR AGENDAMENTO
+
 $(document).ready(function() {
-    $('#finalizar').hide();
-    $('#btn-finalizar').click(function () {
-        $('#finalizar').toggle(500);
+    $('.finalizar').hide();
+    $('.btn-finalizar').click(function () {
+        $('.finalizar').toggle(500);
     })
 
-    $('#btn-confirmar-nao').click(function () {
-        $('#finalizar').hide(500);
+    $('.btn-confirmar-nao').click(function () {
+        $('.finalizar').hide(500);
     })
 })
+
 
 // VIACEP
 const cep = document.querySelector("#cep")

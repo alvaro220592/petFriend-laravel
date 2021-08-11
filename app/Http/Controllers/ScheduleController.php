@@ -30,7 +30,7 @@ class ScheduleController extends Controller
                 ->join('states', 'cities.state_id', '=', 'states.id')
                 ->join('emails', 'clients.id', '=', 'emails.client_id')
                 ->join('phones', 'clients.id', '=', 'phones.client_id')
-                ->where('schedules.status', 'aberto')
+                // ->where('schedules.status', 'aberto')
                 ->where($buscarPor, 'like', "%$search%")
                 ->select(
                     'pets.pet_name',
@@ -62,7 +62,7 @@ class ScheduleController extends Controller
                 ->join('states', 'cities.state_id', '=', 'states.id')
                 ->join('emails', 'clients.id', '=', 'emails.client_id')
                 ->join('phones', 'clients.id', '=', 'phones.client_id')
-                ->where('schedules.status', 'aberto')
+                // ->where('schedules.status', 'aberto')
                 // ->where($buscarPor, 'like', "%$search%")
                 ->select(
                     'pets.pet_name',
@@ -79,6 +79,7 @@ class ScheduleController extends Controller
                     'states.initials',
                     'phones.phone',
                     'emails.email',
+                    'schedules.id',
                     'schedules.dateTime',                    
                     'schedules.service',
                     'schedules.pick_up',
@@ -125,5 +126,13 @@ class ScheduleController extends Controller
         $schedule->save();
 
         return redirect('/');
+    }
+
+    public function finalizar($id){
+        $schedule = Schedule::findOrFail($id);
+        $schedule->status = "finalizado";
+        $schedule->update();
+
+        return redirect("/");
     }
 }

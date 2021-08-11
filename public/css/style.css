@@ -229,14 +229,17 @@ a{
     height: 45px;
 }
 
-.encerrar-agendamento{
+.btn-finalizar, .btn-confirmar, .btn-confirmar-nao{
     background-color: #AA0000;
     color: white;
 }
-.encerrar-agendamento:hover{
+.btn-finalizar:hover{
     color: white;
 }
 
+.form-finalizar{
+    display: inline-block;
+}
 
 @media(max-width:486px){
 
