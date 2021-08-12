@@ -26,16 +26,17 @@ $(document).ready(function () {
 
 // BOTÃO DINAMICO - FINALIZAR AGENDAMENTO
 
-$(document).ready(function() {
-    $('.finalizar').hide();
-    $('.btn-finalizar').click(function () {
-        $('.finalizar').toggle(500);
+/* $(document).ready(function() {
+    var id = $(this).id;
+    $('#finalizar'+id).hide();
+    $('#btn-finalizar').click(function () {
+        $('#finalizar').toggle(500);
     })
 
-    $('.btn-confirmar-nao').click(function () {
-        $('.finalizar').hide(500);
+    $('#btn-confirmar-nao').click(function () {
+        $('#finalizar').hide(500);
     })
-})
+}) */
 
 
 // VIACEP

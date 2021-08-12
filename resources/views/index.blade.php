@@ -90,13 +90,13 @@
                 </p>
                 <p>{{ $schedule->status }}</p>
 
-                <button class="btn my-2 btn-finalizar" value="{{$schedule->id}}">
+                <button class="btn my-2 btn-finalizar" id="btn-finalizar{{ $schedule->id }}">
                         Finalizar
                 </button>
                 
 
                 {{-- SELECT DINAMICO - finalizar --}}
-                <div class="row finalizar" value="{{$schedule->id}}">
+                <div class="row" id="finalizar{{ $schedule->id }}">
                     <div class="col-lg-2">
                         <span class="schedule-title">Origem</span>
                         <select class="form-select">
@@ -120,15 +120,33 @@
                                 Sim
                             </button>
                         </form>
-                        <button class="btn rounded btn-confirmar-nao">Não</button>
+                        <button class="btn rounded btn-confirmar" id="btn-confirmar-nao{{ $schedule->id }}">Não</button>
                     </div>
 
                 </div>
-                
+
+                @section('scripts')
+                    <script>
+                        var id = {!! json_encode($schedule->id) !!};
+
+                        $(document).ready(function() {
+
+                        $('#finalizar'+id).hide();
+                        $('#btn-finalizar'+id).click(function () {
+                            $('#finalizar'+id).toggle(500);
+                        })
+
+                        $('#btn-confirmar-nao'+id).click(function () {
+                            $('#finalizar'+id).hide(500);
+                        })
+                    })
+                    </script>
+                @endsection
+
                 <hr>
         @endforeach
                 
+            </div>
     </div>
-</div>
        
 @endsection
