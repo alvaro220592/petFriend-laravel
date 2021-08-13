@@ -96,7 +96,7 @@
                 
 
                 {{-- SELECT DINAMICO - finalizar --}}
-                <div class="row" id="finalizar{{ $schedule->id }}">
+                <div class="row finalizar" id="finalizar{{ $schedule->id }}">
                     <div class="col-lg-2">
                         <span class="schedule-title">Origem</span>
                         <select class="form-select">
@@ -120,7 +120,7 @@
                                 Sim
                             </button>
                         </form>
-                        <button class="btn rounded btn-confirmar" id="btn-confirmar-nao{{ $schedule->id }}">Não</button>
+                        <button class="btn rounded btn-confirmar-nao" id="btn-confirmar-nao{{ $schedule->id }}">Não</button>
                     </div>
 
                 </div>
@@ -131,13 +131,13 @@
 
                         $(document).ready(function() {
 
-                        $('#finalizar'+id).hide();
-                        $('#btn-finalizar'+id).click(function () {
-                            $('#finalizar'+id).toggle(500);
+                        $('.finalizar').hide();
+                        $('.btn-finalizar').click(function () {
+                            $(this).next('.finalizar').toggle(500);
                         })
 
-                        $('#btn-confirmar-nao'+id).click(function () {
-                            $('#finalizar'+id).hide(500);
+                        $('.btn-confirmar-nao').click(function () {
+                            $('.finalizar').hide(500);
                         })
                     })
                     </script>
