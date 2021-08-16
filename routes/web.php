@@ -55,6 +55,9 @@ Route::put('pets/update/{id}', [PetController::class, 'update']);
 // Finalizar agendamento (altera o status do agendamento pra 'finalizado')
 Route::put("schedule/finalizar/{id}", [ScheduleController::class, 'finalizar']);
 
+// histórico de agendamentos:
+Route::get('/schedules/hist', [ScheduleController::class, 'schedulesHist']);
+
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');

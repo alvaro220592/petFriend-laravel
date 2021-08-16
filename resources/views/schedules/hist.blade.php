@@ -1,22 +1,13 @@
 @extends('layouts.main')
-@section('title', 'Início')
+
+@section('title', 'Histórico')
+
 @section('content')
 
-<h2 class="" id="">Agendamentos ({{ count($schedules) }})</h2>
+<h2 class="" id="">Histórico de agendamentos ({{ count($schedules) }})</h2>
 
 <div class="row mb-1 row justify-content-between">
-    <div class="col-lg-3">
-        <a href="{{ route('agendarView') }}">
-            <h3 class="novo-cadastro text-dark">
-                <ion-icon name="add-circle" class="add-icon"></ion-icon>
-                Novo agendamento
-            </h3>
-        </a>
-    </div>
 
-    <div class="col-lg-3">
-        <h3><a href="schedules/hist" class="schedule-title mt-3">Ver histórico <ion-icon name="time"></ion-icon></a></h3>
-    </div>
 </div>
 
 <div class="px-3" id="schedule-container" >
@@ -97,62 +88,14 @@
                     <span class="schedule-title">Usuário cad.:</span>
                         {{$schedule->user_id}}
                 </p>
-
-                <button class="btn my-2 btn-finalizar" id="btn-finalizar{{ $schedule->id }}">
-                        Finalizar
-                </button>
                 
-                {{-- SELECT DINAMICO - finalizar --}}
-                <div class="row finalizar" id="finalizar{{ $schedule->id }}">
-                    <div class="col-lg-2">
-                        <span class="schedule-title">Tratativa</span>
-                        <form action="/schedule/finalizar/{{ $schedule->id }}" method="post" class="form-finalizar">
-                            @csrf
-                            @method('PUT')
-                            <select class="form-select" name="status">
-                                <option selected>Selecione</option>
-                                <option value="Finalizado">Finalizado</option>
-                                <option value="Cancelado">Cancelado</option>
-                            </select>
-                    </div>
-                    <div class="col-lg-5">
-                        <span class="schedule-title">Observações?</span>
-                        <input type="text" name="obs" class="form-control obs" placeholder="Insira se houver">
-                    </div>
-
-                    <div class="col-lg-3">
-                        <span class="schedule-title">Confirmar?</span><br>
-                            <button class="btn rounded btn-confirmar" type="submit">
-                                Sim
-                            </button>
-                        </form>
-                        <button class="btn rounded btn-confirmar-nao" id="">Não</button>
-                    </div>
-
-                </div>
-
-                @section('scripts')
-                    <script>
-                        var id = {!! json_encode($schedule->id) !!};
-
-                        $(document).ready(function() {
-
-                        $('.finalizar').hide();
-                        $('.btn-finalizar').click(function () {
-                            $(this).next('.finalizar').toggle(500);
-                        })
-
-                        $('.btn-confirmar-nao').click(function () {
-                            $('.finalizar').hide(500);
-                        })
-                    })
-                    </script>
-                @endsection
+                <p><ion-icon name="document-text" class="icon"></ion-icon>
+                    <span class="schedule-title">Status:</span>
+                        {{$schedule->status}}
+                </p>
 
                 <hr>
+
         @endforeach
-                
-            </div>
-    </div>
-       
+
 @endsection

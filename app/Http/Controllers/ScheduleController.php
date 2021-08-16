@@ -30,7 +30,7 @@ class ScheduleController extends Controller
                 ->join('states', 'cities.state_id', '=', 'states.id')
                 ->join('emails', 'clients.id', '=', 'emails.client_id')
                 ->join('phones', 'clients.id', '=', 'phones.client_id')
-                // ->where('schedules.status', 'aberto')
+                ->where('schedules.status', 'aberto')
                 ->where($buscarPor, 'like', "%$search%")
                 ->select(
                     'pets.pet_name',
@@ -62,7 +62,7 @@ class ScheduleController extends Controller
                 ->join('states', 'cities.state_id', '=', 'states.id')
                 ->join('emails', 'clients.id', '=', 'emails.client_id')
                 ->join('phones', 'clients.id', '=', 'phones.client_id')
-                // ->where('schedules.status', 'aberto')
+                ->where('schedules.status', 'aberto')
                 // ->where($buscarPor, 'like', "%$search%")
                 ->select(
                     'pets.pet_name',
@@ -128,11 +128,88 @@ class ScheduleController extends Controller
         return redirect('/');
     }
 
-    public function finalizar($id){
+    public function finalizar(Request $request, $id){
         $schedule = Schedule::findOrFail($id);
-        $schedule->status = "finalizado";
+        $schedule->status = $request->status;
+        $schedule->obs = $request->obs;
         $schedule->update();
 
         return redirect("/");
+    }
+
+    public function schedulesHist(){
+
+        $search = request('search');
+        $buscarPor = request('buscarPor');
+               
+        if($search){
+            $schedules = Schedule::orderBy('schedules.dateTime')
+                ->join('clients', 'schedules.client_id', '=', 'clients.id')        
+                ->join('pets', 'pets.id', '=', 'schedules.pet_id')
+                ->join('streets', 'clients.street_id', '=', 'streets.id')
+                ->join('cities', 'streets.city_id', '=', 'cities.id')
+                ->join('states', 'cities.state_id', '=', 'states.id')
+                ->join('emails', 'clients.id', '=', 'emails.client_id')
+                ->join('phones', 'clients.id', '=', 'phones.client_id')
+                ->where($buscarPor, 'like', "%$search%")
+                ->select(
+                    'pets.pet_name',
+                    'pets.breed',
+                    'pets.sex',
+                    'pets.observations',
+                    'clients.client_name',
+                    'clients.client_lastname',
+                    'clients.address_num',
+                    'clients.street_id',
+                    'streets.zipcode',
+                    'streets.street',
+                    'cities.city',
+                    'states.initials',
+                    'phones.phone',
+                    'emails.email',
+                    'schedules.dateTime',                    
+                    'schedules.service',
+                    'schedules.pick_up',
+                    'schedules.user_id',
+                    'schedules.status',
+                )->get();
+        }else{
+            $schedules = Schedule::orderBy('schedules.dateTime')
+                ->join('clients', 'schedules.client_id', '=', 'clients.id')        
+                ->join('pets', 'pets.id', '=', 'schedules.pet_id')
+                ->join('streets', 'clients.street_id', '=', 'streets.id')
+                ->join('cities', 'streets.city_id', '=', 'cities.id')
+                ->join('states', 'cities.state_id', '=', 'states.id')
+                ->join('emails', 'clients.id', '=', 'emails.client_id')
+                ->join('phones', 'clients.id', '=', 'phones.client_id')
+                // ->where($buscarPor, 'like', "%$search%")
+                ->select(
+                    'pets.pet_name',
+                    'pets.breed',
+                    'pets.sex',
+                    'pets.observations',
+                    'clients.client_name',
+                    'clients.client_lastname',
+                    'clients.address_num',
+                    'clients.street_id',
+                    'streets.zipcode',
+                    'streets.street',
+                    'cities.city',
+                    'states.initials',
+                    'phones.phone',
+                    'emails.email',
+                    'schedules.id',
+                    'schedules.dateTime',                    
+                    'schedules.service',
+                    'schedules.pick_up',
+                    'schedules.user_id',
+                    'schedules.status',
+                )->get();
+        }
+        return view('schedules.hist', [
+			'schedules' => $schedules,
+            'search' => $search,
+        ]);
+
     }
 }
