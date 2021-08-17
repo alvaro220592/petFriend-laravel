@@ -93,6 +93,11 @@
                     <span class="schedule-title">Usuário cad.:</span>
                         {{$schedule->user_id}}
                 </p>
+                    
+                <p><ion-icon name="document-text" class="icon"></ion-icon>
+                    <span class="schedule-title">Status:</span>
+                        {{$schedule->status}}
+                </p>
 
                 <button class="btn my-2 btn-finalizar" id="btn-finalizar{{ $schedule->id }}">
                         Finalizar
@@ -107,8 +112,8 @@
                             @method('PUT')
                             <select class="form-select" name="status">
                                 <option selected>Selecione</option>
-                                <option value="Finalizado">Finalizado</option>
-                                <option value="Cancelado">Cancelado</option>
+                                <option value="finalizado">Finalizado</option>
+                                <option value="cancelado">Cancelado</option>
                             </select>
                     </div>
                     <div class="col-lg-5">

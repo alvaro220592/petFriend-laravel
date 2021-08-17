@@ -74,46 +74,54 @@
                         </ul>
                       </li>
                       
-                      
-
-                      @auth
+                      {{-- @auth
                       <li class="nav-item">
                         <form action="/logout" method="post">
                           @csrf
                           <a class="link-light align-middle" href="/logout" onclick="event.preventDefault(); this.closest('form').submit();">Sair</a>
                         </form>
                       </li>
-                      @endauth
+                      @endauth --}}
 
                       <li class="nav-item">
                         <a class="link-light align-middle" href="#" id="filtrar">
                           Filtrar
                         </a>
                       </li>
+
+                      @if(Route::is('index'))
+                        <form class="d-flex" action="#">
+                          <input class="form-control me-1 fs-5 search-input" name="search" type="search" placeholder="Buscar" aria-label="Search" id="search">
+
+                          <select name="buscarPor" id="buscarPor" class="form-select me-1 search-select">
+                            <option value="" selected disabled>Por...</option>
+                            <option value="client_name">Tutor</option>
+                            <option value="pet_name">Pet</option>
+                          </select>
+
+                          <select name="buscarStatus" id="buscarStatus" class="form-select me-1 search-select">
+                            <option value="" selected disabled>Status</option>
+                            <option value="aberto">Aberto</option>
+                            <option value="finalizado">Finalizado</option>
+                            <option value="cancelado">Cancelado</option>
+                          </select>
+
+                          <button class="btn btn-outline-light btn-geral lupa" type="submit" id="btn-lupa">
+                              <ion-icon name="search" class="fs-3 " id="lupa"></ion-icon>
+                          </button>
+                        </form>
+                      @endif
+
+                      @auth
+                        <li class="nav-item">
+                          <form action="/logout" method="post">
+                            @csrf
+                            <a class="link-light align-middle" href="/logout" onclick="event.preventDefault(); this.closest('form').submit();">Sair</a>
+                          </form>
+                        </li>
+                      @endauth
+
                     </ul>
-
-                    @if(Route::is('index'))
-                      <form class="d-flex">
-                        <input class="form-control me-1 fs-5 search-input" name="search" type="search" placeholder="Buscar" aria-label="Search" id="search">
-
-                        <select name="buscarPor" id="buscarPor" class="form-select me-1 search-select">
-                          <option value="" selected disabled>Por...</option>
-                          <option value="client_name">Tutor</option>
-                          <option value="pet_name">Pet</option>
-                        </select>
-
-                        <select name="buscarStatus" id="buscarStatus" class="form-select me-1 search-select">
-                          <option value="" selected disabled>Status</option>
-                          <option value="aberto">Aberto</option>
-                          <option value="finalizado">Finalizado</option>
-                          <option value="cancelado">Cancelado</option>
-                        </select>
-
-                        <button class="btn btn-outline-light btn-geral lupa" type="submit" id="btn-lupa">
-                            <ion-icon name="search" class="fs-3 " id="lupa"></ion-icon>
-                        </button>
-                      </form>
-                    @endif
 
                   </div>
                 </div>
