@@ -53,22 +53,16 @@
 
                   <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
                     
+                    
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 mx-5">
+                      @if(!Route::is("index"))
                       <li class="nav-item">
                         <a class="link-light align-middle" aria-current="page" href="{{url('/')}}">Início</a>
                       </li>
+                      @endif
                       <li class="nav-item">
                         <a class="link-light align-middle" href="{{url('agendar')}}">Agendamento</a>
                       </li>
-
-                      {{-- @guest
-                        <li class="nav-item">
-                          <a class="link-light align-middle" href="{{url('login')}}">Logar</a>
-                        </li>
-                        <li class="nav-item">
-                          <a class="link-light align-middle" href="{{url('Register')}}">Registrar</a>
-                        </li>
-                      @endguest --}}
                       
                       <li class="nav-item dropdown">
                         <a class="link-light align-middle dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -77,10 +71,15 @@
                         <ul class="dropdown-menu fs-5" aria-labelledby="navbarDropdown">
                           <li><a class="dropdown-item" href="{{ route('/clients/get')}}"><ion-icon name="person"></ion-icon> Clientes</a></li>
                           <li><a class="dropdown-item" href="{{ route('/pets/get')}}"><ion-icon name="paw"></ion-icon> Pets</a></li>
-                          {{-- <li><hr class="dropdown-divider"></li>
-                          <li><a class="dropdown-item" href="{{ url('/register') }}">Usuários</a></li> --}}
                         </ul>
                       </li>
+                      
+                      <li class="nav-item">
+                        <a class="link-light align-middle" href="#" id="filtrar">
+                          Filtrar
+                        </a>
+                      </li>
+
                       @auth
                       <li class="nav-item">
                         <form action="/logout" method="post">
@@ -93,15 +92,24 @@
 
                     @if(Route::is('index'))
                       <form class="d-flex">
-                        <input class="form-control me-1 fs-5 w-50 search-input" name="search" type="search" placeholder="Procurar" aria-label="Search">
-                        <select name="buscarPor" id="" class="form-select w-25 me-1 search-select">
+                        <input class="form-control me-1 fs-5 search-input" name="search" type="search" placeholder="Buscar" aria-label="Search" id="search">
+
+                        <select name="buscarPor" id="buscarPor" class="form-select me-1 search-select">
+                          <option value="" selected disabled>Por...</option>
                           <option value="client_name">Tutor</option>
                           <option value="pet_name">Pet</option>
                         </select>
 
-                          <button class="btn btn-outline-light btn-geral lupa" type="submit">
-                              <ion-icon name="search" class="fs-3 " id="lupa"></ion-icon>
-                          </button>
+                        <select name="buscarStatus" id="buscarStatus" class="form-select me-1 search-select">
+                          <option value="" selected disabled>Status</option>
+                          <option value="aberto">Aberto</option>
+                          <option value="finalizado">Finalizado</option>
+                          <option value="cancelado">Cancelado</option>
+                        </select>
+
+                        <button class="btn btn-outline-light btn-geral lupa" type="submit" id="btn-lupa">
+                            <ion-icon name="search" class="fs-3 " id="lupa"></ion-icon>
+                        </button>
                       </form>
                     @endif
 

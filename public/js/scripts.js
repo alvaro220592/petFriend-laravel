@@ -76,3 +76,11 @@ function modal(){
         $('#modal').modal('show')
     })
 }
+
+// abrir filtro
+$(document).ready(function(){
+    $("#search, #buscarPor, #buscarStatus, #btn-lupa").hide();
+    $("#filtrar").click(function(){
+        $("#search, #buscarPor, #buscarStatus, #btn-lupa").toggle(500);
+    })
+})

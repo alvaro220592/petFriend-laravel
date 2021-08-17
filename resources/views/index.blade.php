@@ -13,10 +13,6 @@
             </h3>
         </a>
     </div>
-
-    <div class="col-lg-3">
-        <h3><a href="schedules/hist" class="schedule-title mt-3">Ver histórico <ion-icon name="time"></ion-icon></a></h3>
-    </div>
 </div>
 
 <div class="px-3" id="schedule-container" >
