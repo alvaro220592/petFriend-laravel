@@ -74,11 +74,7 @@
                         </ul>
                       </li>
                       
-                      <li class="nav-item">
-                        <a class="link-light align-middle" href="#" id="filtrar">
-                          Filtrar
-                        </a>
-                      </li>
+                      
 
                       @auth
                       <li class="nav-item">
@@ -88,6 +84,12 @@
                         </form>
                       </li>
                       @endauth
+
+                      <li class="nav-item">
+                        <a class="link-light align-middle" href="#" id="filtrar">
+                          Filtrar
+                        </a>
+                      </li>
                     </ul>
 
                     @if(Route::is('index'))
