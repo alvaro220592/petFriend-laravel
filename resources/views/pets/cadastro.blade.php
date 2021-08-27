@@ -51,7 +51,7 @@
         
         <div class="row" id="">           
             <div class="form-group col-lg-12">
-                <label for="observations">Obsevações</label>
+                <label for="observations">Observações</label>
                 <div class="form-floating">
                     <textarea class="form-control" placeholder="Leave a comment here" id="observations" style="height: 100px" name="observations"></textarea>
                 </div>
