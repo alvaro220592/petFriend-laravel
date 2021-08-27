@@ -84,3 +84,12 @@ $(document).ready(function(){
         $("#search, #buscarPor, #buscarStatus, #btn-lupa").toggle(500);
     })
 })
+
+// Máscara telefone
+$(document).ready(function(){
+
+    $('#phone').mask('(00) 00000-0000', {reverse:false});
+
+    $('#cep').mask('00000-000', {reverse:false});
+    
+});
