@@ -76,7 +76,7 @@ Validação de formulários com form request:
 deploy - Heroku
 
 Gerar o "Procfile"
-	No arquivo, adicione a linha: "web: vendor/bin/heroku-php-apaceh2 public/" ou nginx no lugar de apache2
+	No arquivo, adicione a linha: "web: vendor/bin/heroku-php-apache2 public/" ou nginx no lugar de apache2
 
 Criar uma aplicação:
 	"heroku create"
