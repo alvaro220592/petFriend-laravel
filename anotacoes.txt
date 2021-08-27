@@ -80,3 +80,9 @@ Gerar o "Procfile"
 
 Criar uma aplicação:
 	"heroku create"
+
+Por falta de permissão, inseri na sessão se scripts do composer.json:
+	 "post-install-cmd": [
+    	 "php artisan clear-compiled",
+	     "chmod -R guo+w public/"
+ 	]
